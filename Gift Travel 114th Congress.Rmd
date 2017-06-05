@@ -1,11 +1,13 @@
 ---
-title: "Gift Travel in the 114th Congress"
+title: "Gift Travel in the U.S. Congress"
 author: "Philip Moniz"
 date: "6/5/2017"
 output: pdf_document
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 casl: /Users/philipmoniz/Documents/Scholastic Scribblings/apsa.csl
 ---
+
+Added Line
 
 When members of Congress travel abroad on official business, as part of what are called Congressional Delegations, CODELs in Capitol parlance, they must report this travel to the Clerk of the House. Scholars have investigated where, how often, for how long, and with whom, members travel abroad (see for example [@Alduncin2014; @Alduncin2017]). When they want to travel as part of a Congressional Delegation, members must first request permission and funding from the parent chamber or relevant committee. Members can also be asked by other members if they would like to participate in a delegation trip. Some CODELs are partisan, others are bipartisan, but they are usually conducted in groups, presumably for the purpose of learning something valuable to their jobs as legislators, though some members have been criticized by challengers for wasting taxpayer money on pleasure trips.
 
