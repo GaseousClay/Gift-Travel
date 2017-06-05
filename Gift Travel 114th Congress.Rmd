@@ -1,6 +1,6 @@
 ---
 title: "Gift Travel in the U.S. Congress"
-author: "Philip Moniz"
+author: "Philip R. Moniz & Zachary A. McGee"
 date: "6/5/2017"
 output: pdf_document
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
