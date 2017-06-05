@@ -1,7 +1,7 @@
 ---
 title: "Gift Travel in the 114th Congress"
 author: "Philip Moniz"
-date: "4/30/2017"
+date: "6/5/2017"
 output: pdf_document
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 casl: /Users/philipmoniz/Documents/Scholastic Scribblings/apsa.csl
