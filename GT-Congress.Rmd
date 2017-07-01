@@ -52,7 +52,7 @@ Whether this casts doubt over the accuracy of the reports is up for interpretati
 
 ### Explanatory variables
 
-The win percentage data were provided by Sean Theriault; the seniority, committee membership, and leadership data were gathered independently. We adjusted the win percentage observations for those members in California who ran against copartisans in the general election because of California's unique primary system. Instead of being given 100% of the vote share, Democrats who defeated other Democrats, for example, were tallied as having won with whatever percentage they got in the general election. This adjustment corrects for what may have been an overestimate of the number of unopposed members. Party and ideology (roll-call summary) data were downloaded from the voteview.org website now under the auspices of Jeff Lewis. We use the Common Space DW-NOMINATE scores that were last updated 12 December 2016: these are called *ideology* in our outputs. We also code for whether the member was part of the party controlling the House. *House majority* is coded as 1 if the member is a member of the majority party in the chamber and 0 otherwise. In our dataset, Republicans held a majority in the House for three of the five Congresses under consideration: the 112th, 113th, and 114th Congresses. The Democrats controlled the chamber for the reamining two: the 110th and 111th Congresses. Leadership is operationalized in three different ways, and it is important that the reader be clear as to what each means. *Chairman* indicates whether the member was a committee chairman. Its converse is *committee*, which includes those who were ranking members on their committees. Finally, there is *party leader*, which captures whether the member is Speaker, majority or minority leader, a whip, or chairman of either the Republican or Democratic caucus.
+The win percentage data were provided by Sean Theriault; the seniority, committee membership, and leadership data were gathered independently. We adjusted the win percentage observations for those members in California who ran against copartisans in the general election because of California's unique primary system. Instead of being given 100% of the vote share, Democrats who defeated other Democrats, for example, were tallied as having won with whatever percentage they got in the general election. This adjustment corrects for what may have been an overestimate of the number of unopposed members. Party and ideology (roll-call summary) data were downloaded from the voteview.org website now under the auspices of Jeff Lewis. We use the Common Space DW-NOMINATE scores that were last updated 12 December 2016: these are called *ideology* in our outputs. We also code for whether the member was part of the party controlling the House. *Majority status* is coded as 1 if the member is a member of the majority party in the chamber and 0 otherwise. In our dataset, Republicans held a majority in the House for three of the five Congresses under consideration: the 112th, 113th, and 114th Congresses. The Democrats controlled the chamber for the reamining two: the 110th and 111th Congresses. Leadership is operationalized in three different ways, and it is important that the reader be clear as to what each means. *Chairman* indicates whether the member was a committee chairman. Its converse is *committee*, which includes those who were ranking members on their committees. Finally, there is *party leader*, which captures whether the member is Speaker, majority or minority leader, a whip, or chairman of either the Republican or Democratic caucus.
 
 ### Dependent variable
 
@@ -125,6 +125,53 @@ Our dependent variable is a count, i.e. a sum of binary items (traveled or did n
 
 <!-- Our main model representing congressional gift travel is linear and additive. I estimate the parameters using ordinary least squares, the results of which are reported in Table 2. Starting at the top of the table, we see two variables, among both parties, that are not statistically different from zero: win percentage and seniority. These null results are surprising because previous work on foreign travel has found significant effects for vote percentage and level of seniority on the number of country-days traveled as part of a Congressional Delegation [@Alduncin2017]. -->
 
+\begin{table}[!htbp] \centering 
+  \caption{Negative Binomial Regression - Gift Travel (110th-114th Congresses)} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{3}{c}{Count of Total Gifted Trips} \\ 
+ & Full Model & Republicans & Democrats \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ Party & 0.008$^{***}$ &  &  \\ 
+  & (0.001) &  &  \\ 
+  & & & \\ 
+ Majority Status &  & 0.600$^{***}$ & $-$0.496$^{***}$ \\ 
+  &  & (0.055) & (0.064) \\ 
+  & & & \\ 
+ Ideology & $-$0.558$^{***}$ & 0.207 & $-$1.849$^{***}$ \\ 
+  & (0.122) & (0.121) & (0.271) \\ 
+  & & & \\ 
+ Win Percentage & 0.008$^{***}$ & 0.003 & 0.007$^{**}$ \\ 
+  & (0.002) & (0.002) & (0.002) \\ 
+  & & & \\ 
+ Seniority & 0.008 & 0.005 & 0.010 \\ 
+  & (0.005) & (0.006) & (0.007) \\ 
+  & & & \\ 
+ Chairman & 0.712$^{***}$ & 0.666$^{***}$ & 0.848$^{***}$ \\ 
+  & (0.089) & (0.095) & (0.155) \\ 
+  & & & \\ 
+ Committee (Ranking Member) & 0.363$^{***}$ & 0.682$^{***}$ & 0.164 \\ 
+  & (0.092) & (0.124) & (0.130) \\ 
+  & & & \\ 
+ Party Leader & 0.731$^{***}$ & 0.764$^{***}$ & 0.749$^{***}$ \\ 
+  & (0.141) & (0.161) & (0.213) \\ 
+  & & & \\ 
+ Constant & $-$0.333 & 0.779$^{***}$ & 0.263 \\ 
+  & (0.193) & (0.151) & (0.153) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 2,180 & 1,102 & 1,078 \\ 
+Log Likelihood & $-$5,626.451 & $-$2,842.529 & $-$2,646.532 \\ 
+$\theta$ & 1.720$^{***}$  (0.077) & 2.778$^{***}$  (0.199) & 1.537$^{***}$  (0.100) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note: Standard errors reported in parentheses.}  & \multicolumn{3}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\
+\end{tabular} 
+\end{table}
+
 Our full model includes members from both parties. All of the independent variables produced significant results except for seniority, which should be unsurprising given our descriptive account of the data but does not bode well for our seniority hypothesis. Ideology was the only variable to produce a negative coefficient. Due to the structure of that variable (Republicans generally have positive scores and Democrats generally have negative scores) we can infer that Democrats may be more likely to travel than Republicans. The significant, yet tiny, party coefficient tells the same story. Our party-specific analysis will better illuminate these phenomena.
 
 The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. Being a party leader or a committee chair both provide large effects, suggesting they are the main drivers of increased gifted trips; in other words, these powerful members go on more trips than the average member. Being a committee's ranking member also has a positive effect on gift-travel, but the effect is about half that of being the chair of the committee.
@@ -139,7 +186,7 @@ Focusing now on the Democrats (n=1078), the largest effect comes from ideology--
 
 Our most puzzling finding comes from the negative effect of being in the majority. For Democrats, being in the majority actually leads to fewer gifted trips. What we can learn from this result is that the focus of sponsors is especially narrow. That is, groups sponsoring gift travel are interested in the small group of members with power. For the rest of the majority party's members (when Democrats are in control), being in the majority actually means going on fewer trips. The explanatory variables for why these rank-and-file members are less likely to travel are probably related more to their district's geographic location, demographic features of their constituency, or policy-area expertise. It is also possible that certain trips that rank-and-file members may have been asked to attend were bumped from the trip in favor of party leaders or committee chairs, such nondecisions are difficult to measure. But, why is this a factor of the House Democratic Party and not of the House Republican Party? If ideology were an expalantory factor for the Republicans, it could be attributed to factionalism. Unfortunately, given the data we have, it is difficult to say why rank-and-file Republicans travel more often when they are in the majority, while Democrats do not.
 
-#Conclusion
+# Conclusion
 
 With all of our data on the table, consider how our hypotheses faired. In all three models, the power hypothesis variables did most of the explanatory work. In each model, being a party leader or committee chair led to significantly more trips than the average member. The only caveat we found was that Democratic ranking members did not have statistically significant increases in trips. Our safety hypothesis, electorally safe members would be more attractive bets for sponsoring organizations, turned out to be correct across all three models, but the effect-size was miniscule. Seniority defied our expectations and appeared insignificant in all three models. There is not a relationship between time served and number of gifted trips taken by members. Sponsoring organizations are certainly interested in targeting members with the power to impact legislation in the most meaningful ways. As the legislative process continues to centralize in the House, we can expect to see this targeting of party leaders and committee chairs by sponsors of gift travel continue.
 
