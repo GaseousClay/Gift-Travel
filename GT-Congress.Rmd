@@ -1,7 +1,7 @@
 ---
 title: "Gift Travel in the U.S. Congress"
 author: "Philip R. Moniz & Zachary A. McGee"
-date: "6/7/2017"
+date: "7/3/2017"
 output: pdf_document
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 #bibliography: /Users/zacharymcgee/Dropbox/Library/library.bib
@@ -22,7 +22,9 @@ Answers to basic questions such as "how much gift travel do members go on?" and 
 
 Gifts imply relationships. In any gift-giving situation, there is a giver and a recipient. Gifts are usually given as an expression of love, respect, or appreciation, and while they are not given with the expectation of reimbursement, they can be given with the expectation of reciprocity [@Graeber2011]. The relevant question here is: "Which members are most likely to reciprocate a sponsor's gift?" Reciprocation in this situation would mean that the member had improved the chances that the sponsor's policy preferences became law. Money can be seen as the clearest type of gift to members; yet, scholars have found little evidence of direct campaign contributions impacting roll-call votes [@Welch1982; @Wright1990]. Gift travel is not a direct campaign contribution, and therefore it may be perceived as a less "direct" source of influence. But, since gift travel is a relatively hidden activity (from the public's perspective), it may be a powerful avenue of influence for sponsors of travel.
 
-Members who have more power, such as party leaders and committee chairmen, would be the first place to look for targets of gift travel. As powerful members, it would make sense for them, ceteris paribus, to receive more invitations and to go on more gift journeys than less powerful members. Following this logic, other types of member should also be better investments for sponsors who wish to provide opportunities to travel and see things outside of Washington. Members who are likely to stick around should be more attractive to sponsors for the simple reason that only members who are in office can provide reciprocal benefits to their sponsors. An advantage should therefore be given both to senior members and to members who win by large margins.
+Members who have more power, such as party leaders and committee chairs, would be the first place to look for targets of gift travel. As powerful members, it would make sense for them, ceteris paribus, to receive more invitations and to go on more gift journeys than less powerful members. Influencing members in leadership positions means influencing the legislative agenda, especially in the form of negative agenda control wherein leaders can tilt policymaking in favor of the status quo [@Cox2005]. 
+
+Other types of member should also be better investments for sponsors who wish to provide opportunities to travel and see things outside of Washington. Members who are likely to stick around should be more attractive to sponsors for the simple reason that only members who are in office can provide reciprocal benefits to their sponsors. An advantage should therefore be given both to senior members and to members who win by large margins. 
 
 As Alduncin, Parker, and Theriault [-@Alduncin2017] point out, senior members may also be more likely to shift their attention toward legislation and policymaking, so there may be some causation going in the other direction; that is, senior members may cultivate relationships with travel-gifting interest groups because they want to learn about policy, or they want information gains from those interest groups [@Hall2006].
 
@@ -34,7 +36,7 @@ The first speculation applies partially to gift travel because some sponsored tr
 
 Whether or not ideological members are advantaged over moderate members depends on the sponsor organizations and their motives. If sponsors as a group are highly ideological, and they seek out likeminded legislators in order to give them information subsidies [@Hall2006], then more ideological members should travel more. Our hypothesis will remain what previous literature has found, but with the thought in mind that the sponsor-led nature of gift travel may result in different patterns than foreign travel.
 
-The second speculation is less obviously relevant than the first to gift travel because gift travel need not be conducted as part of a group, and sponsors decide the composition of the group if there is one. Bipartisan gift travel is not unheard of, however, as there are instances, such as the entire Indiana delegation going on a trip sponsored by a soybean farmers' trade association, where members of different parties travel together, but this appears to be the exception rather than the rule. Sponsors seem to hand-select which members they want to give to.
+The second speculation is less obviously relevant than the first to gift travel because gift travel need not be conducted as part of a group, and sponsors decide the composition of the group if there is one. Bipartisan gift travel is not unheard of, however, as there are instances, such as the entire Indiana delegation going on a trip sponsored by a soybean farmers' trade association, where members of different parties travel together, but state-delegation excursions appear to be the exception rather than the rule. Sponsors seem to hand-select which members they give to.
 
 To reiterate the hypotheses: 1) Party leaders, chairmen, and ranking committee members will travel more (power hypothesis). 2) Safe members will travel more (safety hypothesis). 3) Senior members will travel more (seniority hypothesis). 4) Ideologically extreme members will travel less (ideology hypothesis).
 
@@ -75,7 +77,7 @@ giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFac
 ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="darkblue", fill="lightblue") + theme_classic()
 ```
 
-Democrats travel less often, on average, compared to Republicans (see Figure 2). The average number of trips among Democrats is 4.3, but the variance is large ($latex \sigma^2 = 23.7 $). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($latex \sigma^2 = 20.3 $).
+Democrats travel less often, on average, compared to Republicans (see Figure 2). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7 $). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3 $).
 
 ```{r, echo = F}
 library(ggplot2)
@@ -197,137 +199,5 @@ The last set of findings we present addresses the role of a member's party contr
 A proper continuation of Alduncin, Parker, and Theriault's work [-@Alduncin2014; -@Alduncin2017] would examine who travels with whom and how often. Using what the Clerk of the House provides, we could determine which members were visiting the same locations at the same times, and use this information to investigate how member-level attributes relate to the partisan nature of their gift-travel behavior. Many trips gifted during the Congresses analyzed here involved members traveling together, and we still have yet to find out if party polarization's effect on CODEL travel is felt also on gift travel.
 
 Gift travel is an overlooked aspect of members' relationships with interest groups and non-governmental organizations. Many questions are still unanswered. How does gift travel change over extended periods of time? What is it good for? Researchers should appreciate the potentially important things we have to learn from this unusual form of documented lobbying and travel.
-
-<!-- Continuing down the table, we find significant results for all variables indicating high-ranking positions within the Congress or party. Being a committee chairman, which only Republicans were during the 114th, is predicted to provide 6.5 more trips than members who are not chairmen. The minority-party counterpart, being a ranking member of a committee, also has a positive effect for the number of trips Democrats take. The advantage that the Republican party has in its gift-travel rate can clearly by seen here. Compare the coefficient on *chairman* to that on *committee*. Being on a committee for the minority-party Democrats is associated with two more gift-travel trips, while being a chairman for the Republicans is associated with 6.5 more trips. Clearly, then, the majority party's control of the chairmanships seems to attract more sponsored travel.
-
-\begin{table}[!htbp] \centering 
-  \caption{Effects of Member Attributes on the Number of Gift-Travel Trips Taken in the 114th Congress} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{3}{c}{Number of Trips} \\ 
-\cline{2-4} 
- & Republicans & Democrats & All Members \\ 
-\\[-1.8ex] & (1) & (2) & (3)\\ 
-\hline \\[-1.8ex] 
- winpct & $-$0.978 & $-$0.414 & 0.982 \\ 
-  & (2.210) & (1.990) & (1.441) \\ 
-  & & & \\ 
- seniority & 0.052 & 0.036 & 0.054 \\ 
-  & (0.086) & (0.073) & (0.057) \\ 
-  & & & \\ 
- chairman & 6.556$^{***}$ &  & 4.049$^{***}$ \\ 
-  & (1.144) &  & (1.449) \\ 
-  & & & \\ 
- committee &  & 2.090$^{**}$ & 2.508$^{**}$ \\ 
-  &  & (1.017) & (1.085) \\ 
-  & & & \\ 
- party.leaders & 5.234$^{**}$ & 1.728 & 4.138$^{**}$ \\ 
-  & (2.138) & (2.366) & (1.604) \\ 
-  & & & \\ 
- ideology & 2.106 & $-$9.323$^{***}$ & 2.019$^{***}$ \\ 
-  & (2.017) & (3.105) & (0.508) \\ 
-  & & & \\ 
- Constant & 5.900$^{***}$ & 1.051 & 4.484$^{***}$ \\ 
-  & (1.709) & (1.371) & (1.020) \\ 
-  & & & \\ 
-\hline \\[-1.8ex] 
-Observations & 250 & 189 & 439 \\ 
-R$^{2}$ & 0.169 & 0.114 & 0.167 \\ 
-Adjusted R$^{2}$ & 0.152 & 0.090 & 0.156 \\ 
-Residual Std. Error & 4.702 (df = 244) & 3.896 (df = 183) & 4.419 (df = 432) \\ 
-F Statistic & 9.897$^{***}$ (df = 5; 244) & 4.722$^{***}$ (df = 5; 183) & 14.468$^{***}$ (df = 6; 432) \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table}
-
-A proper test of this interpretation would compare the gift-travel behavior under both Republican- and Democratic-controlled Congresses, but the Clerk's database goes only as far back as 2011. We would need data from 2010 in order to examine what patterns of travel behavior that emerged when the Democrats held a majority in the House of Representatives. As an alternative, we could check to see if the Republicans' advantage in gift travel persisted throughout every year of their three-Congress-long rule.
-
-Lending some further support to the idea that sponsors may privilege members with greater access to agenda control [@Cox2005] and other forms of control is the finding that being a party leader in the majority party means going on 5 additional trips while being a party leader in the minority is not statistically significant.
-
-The estimates of the coefficients on the final explanatory variable in our model, ideology (or roll-call summary) are perhaps the most curious. The effect of a Republican member's ideology is nonsignificant: more conservative Republicans do not appear to travel less than their more moderate copartisans. This finding conflicts with Alduncin, Parker, and Theriault's [-@Alduncin2017] report of a negative relationship between increasing conservatism and frequency of travel. Those authors' results are estimated using a data set comprising 18 Congresses, while mine are based on a single Congress; therefore, we should be skeptical that my finding is robust across time. However, my finding may reflect an important difference between CODEL travel and gift travel.
-
-The Democrats, on the other hand, seem to travel less on sponsorships the more conservative they are. To understand the magnitude of the coefficient on ideology, we should remember that a one-unit change in the DW-NOMINATE scale is very large and impossibly rare. The size of the range of values that Democrats exhibit on the scale is a mere .57. (The Republicans' is .67.) Which means that the most conservative (highest-scoring) Democrat is predicted to go on 5.3 ($.57 * -9.323$) fewer trips than the most liberal (lowest-scoring) Democrat. This is rather large effect, on par with the boost in travel that Republicans who chair committees enjoy.
-
-Curiously, then, there is a penalty for Democrats with higher DW-NOMINATE scores, but no such penalty for similarly extreme Republicans. Given the current evidence, we can only speculate why this is the case, but it is striking that these results are the exact opposite as those found in Alduncin, Parker, and Theriault [-@Alduncin2017] regarding the relationship between ideological extremity and foreign travel among the two major parties. More conservative Republicans, they find, stay home while more liberal Democrats travel just as much as moderate Democrats.
-
-# Discussion
-
-There are two major limitations present in this study. First, my data come from a single Congress, so it is plausible that the relationships discovered here are merely an artifact of a single Congress. If we were to find that the relationships between our explanatory variables and members' travel behavior differed from Congress to Congress, we would be stuck in another pickle in which we would have to decide if we wanted to explain the variation within a given Congress or the variation across Congresses. As theory-generating scientists, we would presumably want to explain the variation we see over the long term, the kind of variation that is inherent to the Congress as an institution and not as a collection of 435 individuals.
-
-Second, I have presented very little information regarding the character and behavior of the sponsors, who may be just as, if not more, important the members themselves in terms of who travels with whom and how often. Gift travel may require a theory of the sponsors' behavior more than or just as much as it does a theory of members' behavior. After all, the sponsors may be the more likely first-movers here. Theorizing about the sponsors may also increase our analytic leverage over the problem of the ever-changing composition of the House. From what we've learned here, it is likely that sponsors seek out higher-ranked members for gift travel, which suggests that there is some hope on the sponsors' part that something will be given in return for their generosity.
-
-It is possible that if we devised a typology of sponsors, perhaps according to their ideology, whether they were pro-business or pro-consumer, international or domestic, we could pick up on some patterns of behavior that we could not detect by looking at the members. It might be, for example, that certain types of sponsor are targeting a specific kind of member for one reason or another, business groups for one reason, foreign-policy groups for another. We might find that all sponsors are gifting travel for the same reason, such as influencing policy, but that the members they choose depends how amenable an audience they expect the member to be.
-
-If, as Hall and Deardorff [@Hall2006] suggest, interest groups and lobbyists provide information subsidies to likeminded legislators, then if we could find a measure of the likemindedness between sponsors and the members, we could find out whether or not their theory carries over to interest groups' gift-travel behavior. The evidence presented here says only that Democrats who lean more moderate are not treated to as much travel as their more liberal copartisans. The Hall and Deardorff thesis does not tell us whether we should expect moderate or extreme partisans to take more gift travel trips; it depends on the ideological makeup of the sponsoring organizations.
-
-## Robustness Check
-
-In an attempt to test the validity of my interpretations expounded above, I compiled a comparable data set for the 112th Congress. (The data were compiled in the same way as before, except with the seniority data coming from Charles Stewart's online repository.) This Congress is the earliest for which the Clerk of the House provides data, and these data allow us to examine gift-travel behavior at a time when the Democrats had only recently lost their majority to the Republicans in the elections of 2010. Therefore, we might expect the advantage exhibited by the majority-party Republicans in the 114th to be attenuated in the 112th.
-
-\begin{table}[!htbp] \centering 
-  \caption{Effects of Member Attributes on the Number of Gift-Travel Trips Taken in the 112th Congress} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{3}{c}{Number of Trips} \\ 
-\cline{2-4} 
- & Republicans & Democrats & All Members \\ 
-\\[-1.8ex] & (1) & (2) & (3)\\ 
-\hline \\[-1.8ex] 
- winpct & $-$0.631 & 8.745$^{**}$ & 4.530$^{**}$ \\ 
-  & (2.101) & (3.594) & (1.835) \\ 
-  & & & \\ 
- seniority & 0.099 & $-$0.094 & $-$0.006 \\ 
-  & (0.067) & (0.087) & (0.054) \\ 
-  & & & \\ 
- chairman & 3.969$^{***}$ &  & 3.883$^{***}$ \\ 
-  & (0.993) &  & (1.102) \\ 
-  & & & \\ 
- committee &  & $-$0.046 & $-$0.138 \\ 
-  &  & (1.363) & (1.163) \\ 
-  & & & \\ 
- party.leader & 6.358$^{***}$ & $-$0.074 & 3.311$^{**}$ \\ 
-  & (1.842) & (2.677) & (1.590) \\ 
-  & & & \\ 
- ideology & 2.701$^{*}$ & $-$4.919 & $-$0.556 \\ 
-  & (1.523) & (3.552) & (0.436) \\ 
-  & & & \\ 
- Constant & 2.347 & $-$1.952 & 1.760 \\ 
-  & (1.701) & (2.087) & (1.203) \\ 
-  & & & \\ 
-\hline \\[-1.8ex] 
-Observations & 241 & 195 & 436 \\ 
-R$^{2}$ & 0.136 & 0.069 & 0.058 \\ 
-Adjusted R$^{2}$ & 0.118 & 0.044 & 0.045 \\ 
-Residual Std. Error & 4.059 (df = 235) & 5.211 (df = 189) & 4.685 (df = 429) \\ 
-F Statistic & 7.418$^{***}$ (df = 5; 235) & 2.794$^{**}$ (df = 5; 189) & 4.401$^{***}$ (df = 6; 429) \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table}
-
-As I said before, the fact that the players keep changing presents us with difficulty in comparing across Congresses; however, I think it is better to do so than not. It is important to note that a t-test reveals no significant difference in the number of trips taken by Democrats versus Republicans. Two Congresses later, with Republican control becoming a pattern, this had drastically changed.
-
-Table 3 reports the estimates for the 112th Congress (2011-2012). The first thing to notice is that the effects of being a committee chairman or a party leader are sizable and significant, just as in the 114th Congress. The effect of ideology is marginally significant this time $(p < .08)$, but it is in the opposite direction as expected. Greater conservatism among Republicans is associated with more gift-travel trips. It is at least consistent with the estimates of the 114th Congress in that ideological extremity among Republicans is not penalized.
-
-The estimates for the Democrats' equation are more disconcerting. Neither being a ranking member on a committee nor being more ideologically extreme has a significant effect on the number of trips taken. Those members who had previously been chairmen were now relegated to ranking members, and sponsors seemed to have abandoned them for their counterparts in the majority party. Or it could be that travel gifts among Democrats were more "democratized," with everyone getting some.
-
-While seniority remains insignificant, as it was in the 114th, win percentage emerges as a significant effect for the Democrats. What to make of this? Since we are looking at the 112th Congress simply as a comparison for the 114th, all we should say at this point is that it is plausible that during different Congresses, different member attributes may matter.
-
-For the most part, we have found consistency, at least among the Republicans (or majority party): party and committee leadership matter for the Republicans, and extreme ideology is no deterrent, while seniority and win percentage do not matter. Among Democrats, the story is one of dissimilarity, except for the continued insignificance of seniority. Across these two Congresses at least, party and committee leadership do not appear to be consistent attractors of gift travel. Excessive moderateness in the 114th was a repellant, while high winning percentages was an attractant in the 112th.
-
-The last consistency worth noting concerns model fit. The adjusted $R^2$ was consistently higher for the Republican models versus the Democratic models. The higher model fit for the Republican models may reflect the fact that these explanatory variables better explain the variance in gift travel within the majority party, or it could be something more intrinsic to the Republican party. Further research that exploits variation in who controls the House would help shed light on this and other questions left unanswered in this analysis.
-
-# Conclusion
-
-A proper continuation of Alduncin, Parker, and Theriault's work [-@Alduncin2014; -@Alduncin2017] would examine who travels with whom and how often. Using what the Clerk of the House provides, we could determine which members were visiting the same locations at the same times, and use this information to investigate how member-level attributes relate to the partisan nature of their gift-travel behavior. Many trips gifted during the 114th Congress involved members traveling together, and we still have yet to find out if party polarization's effect on CODEL travel is felt also on gift travel.
-
-Gift travel is an overlooked aspect of members' relationships with interest groups and non-governmental organizations. Many questions are still unanswered. How does gift travel change over time? What's it good for? Researchers should appreciate the potentially important things we have to learn from this unusual form of documented lobbying and travel. -->
 
 # References
