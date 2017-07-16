@@ -211,6 +211,8 @@ The last set of findings we present addresses the role of a member's party contr
 
 A proper continuation of Alduncin, Parker, and Theriault's work [-@Alduncin2014; -@Alduncin2017] would examine who travels with whom and how often. Using what the Clerk of the House provides, we could determine which members were visiting the same locations at the same times, and use this information to investigate how member-level attributes relate to the partisan nature of their gift-travel behavior. Many trips gifted during the Congresses analyzed here involved members traveling together, and we still have yet to find out if party polarization's effect on CODEL travel is felt also on gift travel.
 
+Elaboration of this line of research should also try to better specify the relationship between sponsors and members. A measure of the ideological similarity would go a good ways in this regard, as would a more nuanced coding of the committee-related variables. Like sophisticated donors, sponsors may also target the committees most relevant to their policy goals [Barber2017]. 
+
 Gift travel is an overlooked aspect of members' relationships with interest groups and non-governmental organizations. Many questions are still unanswered. How does gift travel change over extended periods of time? What is it good for? Researchers should appreciate the potentially important things we have to learn from this unusual form of documented lobbying and travel.
 
 # References
