@@ -3,15 +3,17 @@ title: "Gift Travel in the U.S. Congress"
 author: "Philip R. Moniz & Zachary A. McGee"
 date: "8/28/2017"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
 casl: /Users/philipmoniz/Documents/Scholastic Scribblings/apsa.csl
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 ---
 
 Members of Congress and interest groups have a dynamic relationship. They often exchange policy information, and sometimes personnel, with each other. Through what means do members and interest groups communicate their policy goals and strategies. They openly do so at committee hearings, but they also conduct business behind closed doors at retreats, conventions, and conferences sponsored by non-governmental organizations. When members go these sponsored events, they must report it to the Clerk of the House as what is called *gift travel*[^1]. Gift travel represents an important, but understudied, example of representative behavior. Learning about gift travel behavior informs us about how members spend their time and resources on an unseen realm of information exchange. We also potentially have much to learn about the relationships that members and interest groups cultivate through these expense-paid trips. 
 
-[^1]: According to Rule XXV, clause 5 of the Rules of the House of Representatives, members must disclose reimbursement for such travel within 15 days of return [@Wickham2015]. The Clerk of the House makes a report of these disclosures public on its website. Rule XXV is also clear that no such gift travel can be paid for by a registered lobbyist or by the agent of a foreign principal, and neither can a registered lobbyist or agent of a foreign principal be present at any time during the trip.
+[^1]: According to Rule XXV, clause 5 of the Rules of the House of Representatives, members must disclose reimbursement for such travel within 15 days of return [@Wickham2015]. The Clerk of the House makes a report of these disclosures public on its website. Rule XXV is also clear that no such gift travel can be paid for by a registered lobbyist or by the agent of a foreign principal, and neither can a registered lobbyist or agent of a foreign principal be present at any time during the trip[^2].
+
+[^2]: There are a few exceptions where members of Congress may have their travel paid for by foreign governments. These exceptions are usually when foreign governments pay for in-country expenses or travel for members visiting the sponsoring country. There are limitations for how long these foreign-government-paid trips may be, and oftentimes these trips must be pre-approved by the relevant committee.
 
 Scholars have investigated where, how often, for how long, and with whom, members travel abroad as part of Congressional Delegations, or CODELs in Capitol parlance (see for example [@Alduncin2014; @Alduncin2017]). When they want to travel as part of a Congressional Delegation, members must first request permission and funding from the parent chamber or relevant committee. Members can also be asked by other members if they would like to participate in a delegation trip. Some CODELs are partisan, others are bipartisan, but they are usually conducted in groups, presumably for the purpose of learning something valuable to their jobs as legislators, though some members have been criticized by challengers for wasting taxpayer money on pleasure trips.
 
@@ -91,7 +93,7 @@ Finally, there is *party leader*, which captures whether the member is Speaker, 
 
 Following Alduncin, Parker, and Theriault [-@Alduncin2017], we run the analyses separately for the two parties under the assumption that the explanatory variables may operate differently within each party. However, we also include whole-chamber analyses for comparison.
 
-```{r, echo = F, evaluate = F}
+```{r, echo = F, include = F}
 library(ggplot2)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
 ggplot(data = giftdata, aes(x = trips, color = as.factor(party))) + geom_histogram(bins = 15, fill="white", alpha=0.5, position="dodge") + theme_classic() + ggtitle("Figure 2: Histogram of Trips by Party (Red = Democrat)")
