@@ -1,36 +1,41 @@
 ---
 title: "Gift Travel in the U.S. Congress"
 author: "Philip R. Moniz & Zachary A. McGee"
-date: "7/3/2017"
-output: pdf_document
-bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
-#bibliography: /Users/zacharymcgee/Dropbox/Library/library.bib
+date: "8/28/2017"
+output:
+  word_document: default
+  pdf_document: default
 casl: /Users/philipmoniz/Documents/Scholastic Scribblings/apsa.csl
+bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 ---
 
-When members of Congress travel abroad on official business, as part of what are called Congressional Delegations, CODELs in Capitol parlance, they must report this travel to the Clerk of the House. Scholars have investigated where, how often, for how long, and with whom, members travel abroad (see for example [@Alduncin2014; @Alduncin2017]). When they want to travel as part of a Congressional Delegation, members must first request permission and funding from the parent chamber or relevant committee. Members can also be asked by other members if they would like to participate in a delegation trip. Some CODELs are partisan, others are bipartisan, but they are usually conducted in groups, presumably for the purpose of learning something valuable to their jobs as legislators, though some members have been criticized by challengers for wasting taxpayer money on pleasure trips.
+Members of Congress and interest groups have a dynamic relationship. They often exchange policy information, and sometimes personnel, with each other. Through what means do members and interest groups communicate their policy goals and strategies. They openly do so at committee hearings, but they also conduct business behind closed doors at retreats, conventions, and conferences sponsored by non-governmental organizations. When members go these sponsored events, they must report it to the Clerk of the House as what is called *gift travel*[^1]. Gift travel represents an important, but understudied, example of representative behavior. Learning about gift travel behavior informs us about how members spend their time and resources on an unseen realm of information exchange. We also potentially have much to learn about the relationships that members and interest groups cultivate through these expense-paid trips. 
 
-While members can apply for travel paid for by the federal government, there is another way that members can get out of the house: gift travel. Gift travel comprises journeys that are paid for by a non-governmental source, and these trips can be within or without the United States. According to Rule XXV, clause 5 of the Rules of the House of Representatives, members must disclose reimbursement for such travel within 15 days of return [@Wickham2015]. The Clerk of the House makes a report of these disclosures public on its website. Rule XXV is also clear that no such gift travel can be paid for by a registered lobbyist or by the agent of a foreign principal, and neither can a registered lobbyist or agent of a foreign principal be present at any time during the trip.[^1]
+[^1]: According to Rule XXV, clause 5 of the Rules of the House of Representatives, members must disclose reimbursement for such travel within 15 days of return [@Wickham2015]. The Clerk of the House makes a report of these disclosures public on its website. Rule XXV is also clear that no such gift travel can be paid for by a registered lobbyist or by the agent of a foreign principal, and neither can a registered lobbyist or agent of a foreign principal be present at any time during the trip.
 
-[^1]: There are a few exceptions where members of Congress may have their travel paid for by foreign governments. These exceptions are usually when foreign governments pay for in-country expenses or travel for members visiting the sponsoring country. There are limitations for how long these foreign-government-paid trips may be, and oftentimes these trips must be pre-approved by the relevant committee.
+Scholars have investigated where, how often, for how long, and with whom, members travel abroad as part of Congressional Delegations, or CODELs in Capitol parlance (see for example [@Alduncin2014; @Alduncin2017]). When they want to travel as part of a Congressional Delegation, members must first request permission and funding from the parent chamber or relevant committee. Members can also be asked by other members if they would like to participate in a delegation trip. Some CODELs are partisan, others are bipartisan, but they are usually conducted in groups, presumably for the purpose of learning something valuable to their jobs as legislators, though some members have been criticized by challengers for wasting taxpayer money on pleasure trips.
 
-Gift travel must also be for the purpose of official business. Members are not supposed to accept reimbursement for trips conducted primarily for leisure or diversion; such trips, of course, would give the appearance of corruption. Gift travel allows non-governmental organizations, such as trade associations, non-profits, think tanks, and universities to invite members of Congress to conferences, conventions, dinners, and other types of events. But why do non-governmental organizations choose to fly members to their events? Are some members more likely to be invited than others, and if so, why?
+Gift travel must also be for the purpose of official business. Members are not supposed to accept reimbursement for trips conducted primarily for leisure or diversion; such trips, of course, would give the appearance of corruption. Gift travel allows non-governmental organizations, such as trade associations, non-profits, think tanks, and universities to invite members of Congress to conferences, conventions, dinners, and other types of events. But why do non-governmental organizations choose to fly members to their events? Are some members more likely to be invited than others, and if so, why? Ultimately, we would like to ask, what effect does gift travel have on members' legislative behavior? 
 
-Answers to basic questions such as "how much gift travel do members go on?" and "what organizations are the most popular sponsors" are unanswered in the literature on members' travel behavior. This paper will provide a first look at this specific kind of travel behavior. We will rely on the literature on foreign travel among members of Congress to inform hypotheses about gift travel since foreign travel is the nearest thing to gift travel that scholars have studied. The key difference to keep in mind, however, is that delegation and committee travel are the product of members' initiative while gift travel starts, at least in theory, with the giver.
+However, we still lack answers to basic questions such as "how much gift travel do members go on?" and "what organizations are the most popular sponsors" are unanswered in the literature on members' travel behavior. This paper provides a first look at this specific kind of travel behavior. We will rely on the literature on foreign travel among members of Congress to inform our hypotheses about gift travel since foreign travel is the nearest thing to gift travel that scholars have studied. The key difference to keep in mind is that delegation and committee travel are the product of members' initiative while gift travel starts, at least in theory, with the giver.
+
+We theorize that sponsoring organizations are seeking short-term policy influence, and hypothesize that they target members who are strategically positioned to influence policy. We expect high-ranking, safe, and senior members to travel more, and ideologically extreme members to travel less. We find that party leaders, committee chairs, and ranking members travel much more than the rank and file, but that seniority and safety have nonsignificant and small effects, respectively. Unexpectedly, greater ideological extremeness is associated with more gift travel rather than less.      
 
 # The Causes of Gift Travel
 
 Gifts imply relationships. In any gift-giving situation, there is a giver and a recipient. Gifts are usually given as an expression of love, respect, or appreciation, and while they are not given with the expectation of reimbursement, they can be given with the expectation of reciprocity [@Graeber2011]. The relevant question here is: "Which members are most likely to reciprocate a sponsor's gift?" Reciprocation in this situation would mean that the member had improved the chances that the sponsor's policy preferences became law. Money can be seen as the clearest type of gift to members; yet, scholars have found little evidence of direct campaign contributions impacting roll-call votes [@Welch1982; @Wright1990]. Gift travel is not a direct campaign contribution, and therefore it may be perceived as a less "direct" source of influence. But, since gift travel is a relatively hidden activity (from the public's perspective), it may be a powerful avenue of influence for sponsors of travel.
 
-Members who have more power, such as party leaders and committee chairs, would be the first place to look for targets of gift travel. As powerful members, it would make sense for them, ceteris paribus, to receive more invitations and to go on more gift journeys than less powerful members. Influencing members in leadership positions means influencing the legislative agenda, especially in the form of negative agenda control wherein leaders can tilt policymaking in favor of the status quo [@Cox2005]. 
+We posit that sponsors are organizations that are looking for short-term influence on policymaking, and sending members to conferences and on fact-finding missions is an attempt to "educate" them, and be "educated" in return, in light of that purpose. Sponsors are strategic actors and will not waste their gift resources on members who cannot or will not improve their chances of influencing policymaking.
+
+*Power hypothesis* Members who have more power, such as party leaders and committee chairs, would be the first place to look for targets of gift travel. As powerful members, it would make sense for them, ceteris paribus, to receive more invitations and to go on more gift journeys than less powerful members. Influencing members in leadership positions means influencing the legislative agenda, especially in the form of negative agenda control wherein leaders can tilt policymaking in favor of the status quo [@Cox2005]. 
 
 Other types of members should also be better investments for sponsors who wish to provide opportunities to travel and see things outside of Washington. Members who are likely to stick around should be more attractive to sponsors for the simple reason that only members who are in office can provide reciprocal benefits to their sponsors. An advantage should therefore be given both to senior members and to members who win by large margins.
 
-As Alduncin, Parker, and Theriault [-@Alduncin2017] point out, senior members may also be more likely to shift their attention toward legislation and policymaking, so there may be some causation going in the other direction; that is, senior members may cultivate relationships with travel-gifting interest groups because they want to learn about policy, or they want information gains from those interest groups [@Hall2006].
+*Seniority hypothesis* As Alduncin, Parker, and Theriault [-@Alduncin2017] point out, senior members may also be more likely to shift their attention toward legislation and policymaking, so there may be some causation going in the other direction; that is, senior members may cultivate relationships with travel-gifting interest groups because they want to learn about policy, or they want information gains from those interest groups [@Hall2006].
 
-In addition, because members from ideologically aligned districts, those with large margins of victory, are more likely to pursue national-level policy issues [@Grimmer2013a], we should also expect safe members to build relationships with nongovernmental groups that can provide opportunities for travel, and therefore they should take more trips at the NGOs expense.
+*Safety hypothesis* In addition, because members from ideologically aligned districts, those with large margins of victory, are more likely to pursue national-level policy issues [@Grimmer2013a], we should also expect safe members to build relationships with non-governmental groups that can provide opportunities for travel, and therefore they should take more trips at the NGOs expense. 
 
-As for the effect of members' political ideology, there is an interesting difference in how ideology may come into play in foreign travel as opposed to gift travel. [@Alduncin2017] speculate that more ideologically extreme members would tend to travel abroad less because they would be less inclined to think that they had something to learn from how foreign countries do things. For instance, Alduncin, Parker, and Theriault [-@Alduncin2017] report that conservative Republicans have always been less likely to travel (18). The authors further speculate that, because foreign travel often entails flying with members of the other party, ideologically extreme members will travel less than more moderate members.
+*Ideology hypothesis* As for the effect of members' political ideology, there is an interesting difference in how ideology may come into play in foreign travel as opposed to gift travel. [@Alduncin2017] speculate that more ideologically extreme members would tend to travel abroad less because they would be less inclined to think that they had something to learn from how foreign countries do things. For instance, Alduncin, Parker, and Theriault [-@Alduncin2017] report that conservative Republicans have always been less likely to travel (18). The authors further speculate that, because foreign travel often entails flying with members of the other party, ideologically extreme members will travel less than more moderate members.
 
 The first speculation applies partially to gift travel because some sponsored trips are to foreign countries for the purpose of learning about social and political life abroad; other trips, however, keep members in the United States, and can bring them to ideologically charged events, such as those held by think tanks like the Heritage Foundation. Therefore, because gift travel may be more conducive to ideology-affirming experiences than foreign travel, ideological members may be no different than moderate members in their quantity of travel.
 
@@ -38,75 +43,11 @@ Whether or not ideological members are advantaged over moderate members depends 
 
 The second speculation is less obviously relevant than the first to gift travel because gift travel need not be conducted as part of a group, and sponsors decide the composition of the group if there is one. Bipartisan gift travel is not unheard of, however, as there are instances, such as the entire Indiana delegation going on a trip sponsored by a soybean farmers' trade association, where members of different parties travel together, but state-delegation excursions appear to be the exception rather than the rule. Sponsors seem to hand-select which members they give to.
 
-To reiterate the hypotheses: 1) Party leaders, chairmen, and ranking committee members will travel more (power hypothesis). 2) Safe members will travel more (safety hypothesis). 3) Senior members will travel more (seniority hypothesis). 4) Ideologically extreme members will travel less (ideology hypothesis). Our theory, then, is that sponsors are organizations that are looking for short-term influence on policymaking, and sending members to conferences and on fact-finding missions is an attempt to "educate" them in light of that purpose. Sponsors are strategic actors and will not waste their gift resources on members who cannot or will not improve their chances of influencing policymaking. Another implication of this theory, whose testing will have to await further work, is that sponsors should target ideologically similar members for travel [@Barber2017], and members whose committee assignments are especially relevant to sponsors' policy preferences.   
-
-Following Alduncin, Parker, and Theriault [-@Alduncin2017], we run the analyses separately for the two parties under the assumption that these explanatory variables may operate differently within each party. However, we also include whole-chamber analyses for comparison.
-
 # Data
 
-The data for this analysis come from the website of the Clerk of the House. The Clerk publishes yearly all of the gift travel reports filed by members of the House. This paper will analyze these reports from the 110th through the 114th Congresses (January 2007-January 2017). These data, after cleaning, collapsing duplicate trip entries, and aggregating by member consist of 2180 observations, which are at the level of the member per Congress.[^2]
+The data for this analysis come from the website of the Clerk of the House. The Clerk publishes yearly all of the gift travel reports that representatives file. This paper analyzes these reports from the 110th through the 114th Congresses (2007-2017). These data, after cleaning, collapsing duplicate trip entries, and aggregating by member, consist of 2180 observations, which are at the level of the member per Congress.[^3]
 
-[^2]: Interestingly, almost half of the original entries were duplicates. For example, one of Speaker Boehner's trips to Jacksonville, Florida had 18 separate but identical filings in the 114th Congress' reports. Why this occurs is unclear, but perhaps the high rate of duplication indicates an eagerness to comply with the Rules.
-
-### Dependent variable
-
-We have one primary dependent variable: *trips* is a count of the number of separate journeys reported by each member to the Clerk of the House; each unique report counts as one trip. We have run the following analyses using a total count of the number of days spent traveling, and the results are substantively equivalent.
-### Explanatory variables
-
-The win percentage data were provided by Sean Theriault; the seniority, committee membership, and leadership data were gathered independently. We adjusted the win percentage observations for those members in California who ran against copartisans in the general election because of California's unique primary system. Instead of being given 100% of the vote share, Democrats who defeated other Democrats, for example, were tallied as having won with whatever percentage they got in the general election. This adjustment corrects for what may have been an overestimate of the number of unopposed members. Party and ideology (roll-call summary) data were downloaded from the voteview.org website now under the auspices of Jeff Lewis. To create our measure of *ideological extremity*, we start with the Common Space DW-NOMINATE scores, and then calculate the distance, in absolute value, of each member from the opposing party's mean. We also code for whether the member was part of the party controlling the House. *Majority status* is coded as 1 if the member is a member of the majority party in the chamber and 0 otherwise. In our dataset, Republicans held a majority in the House for three of the five Congresses under consideration: the 112th, 113th, and 114th Congresses. The Democrats controlled the chamber for the reamining two: the 110th and 111th Congresses. Leadership is operationalized in three different ways, and it is important that the reader be clear as to what each means. *Chair* indicates whether the member was a committee chairman. Its converse is *committee*, which includes those who were ranking members on their committees. Finally, there is *party leader*, which captures whether the member is Speaker, majority or minority leader, a whip, or chairman of either the Republican or Democratic caucus.
-
-## Descriptive Statistics
-
-After grouping all trips according to the members who went on those trips, we are left with a dataset comprised of 2180 members. There are a few extra members than may be expected because some members were replaced during the course of the Congress.
-
-### Members; or, the Travelers
-
-Let's start with some description of the members themselves. The average number of terms, our measure of seniority, is 5.7, sd = 4.6. In other words, the average member is in about their sixth term of service. The average win percentage was about 68% with a standard deviation of 13 percentage points. A full 165 (7.5%) of the members were unopposed in their election; they won with 100% of the vote. Our dataset represent periods of both full Democratic and full Republican majorities in Congress. And, the final Congress in our dataset (the 114th) was the largest majority the Republicans had controlled of the House since 1929 [@Bump2014].
-
-Not all members go on gift travel, but most of them do. Of the 2180 total members, 292 (13.4%) did not go on a single trip. Similarly, 253 members (11.6%) went on exactly one, 42 (11.4%) went on two, 255 (11.7%) went on three, with 4.8 trips being the mean. Figure 1 shows a histogram of the number of trips taken by all the members. The figure is heavily right-skewed (mean = 4.8, sd = 4.7, median = 4), with only 30 members going on 20 or more trips. The member to go on the most trips, 50, was Fred Upton (MI-R), both a committee chairman and a senior member. Louise Slaughter (NY-D), another senior member in a high-ranking committee position, though in the minority party, went on zero trips during the 114th Congress.
-
-```{r, echo = F}
-library(ggplot2)
-setwd("/Users/zacharymcgee/Dropbox/Gift_Travel")
-giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="darkblue", fill="lightblue") + theme_classic()
-```
-
-Democrats travel less often, on average, compared to Republicans (see Figure 2). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7 $). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3 $).
-
-```{r, echo = F}
-library(ggplot2)
-setwd("/Users/zacharymcgee/Dropbox/Gift_Travel")
-giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x = trips, color = as.factor(party))) + geom_histogram(bins = 15, fill="white", alpha=0.5, position="dodge") + theme_classic()
-```
-
-<!-- Clearly the relationship between seniority and number of trips is not hard and fast, but Pearson's *r* correlations can give us a preliminary understanding of the relationships between the explanatory variables and our dependent variable, the number of gift-travel trips taken. Table 1 reports these correlations. The last two columns are the dependent variables. As can be seen in the *trips* column, more positive correlations are more closely associated with positions of power in the Congress than with seniority, ideology, or win percentage.
-
-\begin{table}[!htbp] \centering 
-  \caption{} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & winpct & seniority & ideology & leadership & committee & chairman & trips \\ 
-\hline \\[-1.8ex] 
-winpct & $1$ & $0.231$ & $$-$0.055$ & $0.111$ & $0.091$ & $0.088$ & $0.063$ \\ 
-seniority & $0.231$ & $1$ & $$-$0.283$ & $0.401$ & $0.383$ & $0.173$ & $0.109$ \\ 
-ideology & $$-$0.055$ & $$-$0.283$ & $1$ & $$-$0.037$ & $$-$0.057$ & $0.194$ & $0.203$ \\ 
-leadership & $0.111$ & $0.401$ & $$-$0.037$ & $1$ & $0.911$ & $0.663$ & $0.336$ \\ 
-committee & $0.091$ & $0.383$ & $$-$0.057$ & $0.911$ & $1$ & $0.689$ & $0.290$ \\ 
-chairman & $0.088$ & $0.173$ & $0.194$ & $0.663$ & $0.689$ & $1$ & $0.340$ \\ 
-trips & $0.063$ & $0.109$ & $0.203$ & $0.336$ & $0.290$ & $0.340$ & $1$ \\ 
-\hline \\[-1.8ex] 
-\end{tabular} 
-\end{table}
-
-#### Differences in Means
-
-Two-sample t-tests can give us a first look at the question of whether the parties differ significantly in the amount of gift travel they go on, and lend some credence to the idea that the parties should be modeled separately. The first and most basic difference to note is that Democrats on average took 4.9 trips during the 114th Congress, while Republicans went on 7.13 trips on average. This difference is highly significant (p < .01). In terms of total days traveled, those two extra trips for Republicans amounts to about 5.5 days more away from Capitol Hill. The average Republican traveled for 27.2 days, and the average Democrat was gone for 21.7 (p < .01).
-
-Whether the differences between the parties reflect party-specific behavior or simply the benefits of being the majority party will have to await further analysis. What we can say now is that there appears to be stark differences between party leadership and the rank and file: 11 trips on average for party leaders; 6.1 trips for the rank and file (p < .05). Leaders, just like Republicans as compared to Democrats, went on five more trips than rank-and-file members, but these five trips provided almost 16 more days on the road (41 vs 24.6 days, p < .05). Interestingly, leaders and rank-and-file members do not differ on the length of the average trip, which suggests that the reason for leaders' greater total of travel days is not because they took a few very long trips, say, to foreign countries. Leaders must simply take more ordinary journeys of around three days. -->
+[^3]: Interestingly, almost half of the original entries were duplicates. For example, one of Speaker Boehner's trips to Jacksonville, Florida had 18 separate but identical filings in the 114th Congress' reports. Why this occurs is unclear, but perhaps the high rate of duplication indicates an eagerness to comply with the Rules.
 
 ### Sponsors; or, the Givers
 
@@ -114,15 +55,51 @@ It is worth pausing to observe some basic facts about the organizations behind a
 
 We also might wonder whether travel sponsors are egalitarian bunch, each giving roughly the same number of trips per Congress, or whether the travel-sponsor universe is characterized more by a few heavy hitters that account for the bulk of members' gift travel year after year. As it turns out, a small number of familiar names are responsible for a hefty portion of the number of trips taken each Congress. The first thing to note is that only about 4% (63 out of 1466) of the sponsoring organizations averaged at least one trip per Congress, or five total in the data set. This datum would imply that only five or six dozen organizations are taking the cost of putting members on trips as a regular part of business. The other 95% or so appear to be using gift travel only sparingly, perhaps in relation to special opportunities or changes in the information environment [@Jones2005].
 
-The sixty-two organizations that on average sponsored one or more trips per Congress account for 72% of the all the reported trips in our data set. That is, roughly three out of every four trips are sponsored by the same sixty-three entities. The concentration of gifting behavior among a handful of sponsors is an important descriptive fact to note. Our theoretical expectation is that more powerful members will travel more often, and if the same sponsors are doing so over and over, then this makes it likely that travel sponsors are generally well-funded and strategic, not happenstance or one-off givers.
+The sixty-two organizations that on average sponsored one or more trips per Congress account for 72% of the all the reported trips in our data set. That is, roughly three out of every four trips are sponsored by the same sixty-three groups. The concentration of gifting behavior among a handful of sponsors is an important descriptive fact to note. Our theoretical expectation is that more powerful members will travel more often, and if the same sponsors are doing so over and over, then this makes it likely that travel sponsors are generally well-funded and strategic, not circumstantial or one-off givers.
 
 To get some notion of who the big players are, let's look briefly at the top five gifters. The most active sponsor, by far, is an organization called the Congressional Institute, which provided travel subsidies an average of 370.8 occasions per Congress. Judging from the reports, the Congressional Institute seems to invite great numbers of members, usually around 150 of them, to places near Washington, such as Hot Springs, VA. The Institute claims to advocate for congressional reform; for example, promoting the idea of a joint committee that will propose changes to rules and procedures followed in the House and Senate.
 
 The American Israel Education Foundation (146.0 trips per Congress), the Aspen Institute (107.4), the Heritage Foundation (88.4), and the Humpty Dumpty Institute (45.6) round out the top five. Our analysis will speak to who travels and how much, but future work should investigate whether those who travel more do so because they receive trips from a wide variety of sponsors or because they are given trips again and again by the same big organizations. 
 
+### Dependent variable
+
+We have one primary dependent variable: *trips* is a count of the number of separate journeys reported by each member to the Clerk of the House; each unique report counts as one trip. We have run the following analyses using a total count of the number of days spent traveling, and the results are substantively equivalent.
+
+Not all members go on gift travel, but most of them do. Of the 2180 total members, 292 (13.4%) did not go on a single trip. Similarly, 253 members (11.6%) went on exactly one, 42 (11.4%) went on two, 255 (11.7%) went on three, with 4.8 trips being the mean. Figure 1 shows a histogram of the number of trips taken by all the members. The figure is heavily right-skewed (mean = 4.8, sd = 4.7, median = 4), with only 30 members going on 20 or more trips. The member to go on the most trips, 50, was Fred Upton (MI-R), both a committee chairman and a senior member. Louise Slaughter (NY-D), another senior member in a high-ranking committee position, though in the minority party, went on zero trips during the 114th Congress.
+
+```{r, echo = F}
+library(ggplot2)
+giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
+ggplot(data = giftdata, aes(x=trips)) + geom_histogram(bins = 30, color="darkblue", fill="lightblue") + theme_classic() + ggtitle("Figure 1: Histogram of Gift-Travel Trips")
+```
+
+Democrats travel less often, on average, compared to Republicans (see Figure 2). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7$). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3$).
+
+### Explanatory variables
+
+The win percentage data were provided by Sean Theriault; the seniority, committee membership, and leadership data were gathered independently. We adjusted the win percentage observations for those members in California who ran against copartisans in the general election because of California's unique primary system. Instead of being given 100% of the vote share, Democrats who defeated other Democrats, for example, were tallied as having won with whatever percentage they got in the general election. This adjustment corrects for what may have been an overestimate of the number of unopposed members. 
+
+Party and ideology (roll-call summary) data were downloaded from the voteview.org website now under the auspices of Jeff Lewis. To create our measure of *ideological extremity*, we start with the Common Space DW-NOMINATE scores, and then calculate the distance, in absolute value, of each member from the opposing party's mean. 
+
+We also code for whether the member was part of the party controlling the House. *Majority status* is coded as 1 if the member is a member of the majority party in the chamber and 0 otherwise. In our dataset, Republicans held a majority in the House for three of the five Congresses under consideration: the 112th, 113th, and 114th Congresses. The Democrats controlled the chamber for the other two: the 110th and 111th Congresses. Leadership is operationalized in three different ways, and it is important that the reader be clear as to what each means. 
+
+*Chair* indicates whether the member was the chair of a committee. 
+
+Its converse is *committee*, which includes those who were ranking members on their committees. 
+
+Finally, there is *party leader*, which captures whether the member is Speaker, majority or minority leader, a whip, or the chair of either the Republican or Democratic caucus.
+
+Following Alduncin, Parker, and Theriault [-@Alduncin2017], we run the analyses separately for the two parties under the assumption that the explanatory variables may operate differently within each party. However, we also include whole-chamber analyses for comparison.
+
+```{r, echo = F, evaluate = F}
+library(ggplot2)
+giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
+ggplot(data = giftdata, aes(x = trips, color = as.factor(party))) + geom_histogram(bins = 15, fill="white", alpha=0.5, position="dodge") + theme_classic() + ggtitle("Figure 2: Histogram of Trips by Party (Red = Democrat)")
+```
+
 # Models and Results
 
-Our dependent variable is a count, i.e. a sum of binary items (traveled or did not), and it is over dispursed. Further, there is heterogeneity across individuals' probability of traveling. Therefore, we use a negative binomial regression estimated via maximum likelihood. Each member of Congress does not have an equal probability of being selected to travel by a sponsoring organization. This is especially true of party leaders or committee chairs where some members hold more power or policy expertise than rank-and-file members. We also include fixed-effects for each Congress.
+Our dependent variable is a count, i.e., a sum of binary items (traveled or did not), and it is over-dispersed. Further, there is heterogeneity across individuals' probability of traveling. Therefore, we use a negative binomial regression estimated via maximum likelihood. Each member of Congress does not have an equal probability of being selected to travel by a sponsoring organization. This is especially true of party leaders or committee chairs where some members hold more power or policy expertise than rank-and-file members. We also include fixed-effects for each Congress.
 
 <!-- Our main model representing congressional gift travel is linear and additive. I estimate the parameters using ordinary least squares, the results of which are reported in Table 2. Starting at the top of the table, we see two variables, among both parties, that are not statistically different from zero: win percentage and seniority. These null results are surprising because previous work on foreign travel has found significant effects for vote percentage and level of seniority on the number of country-days traveled as part of a Congressional Delegation [@Alduncin2017]. -->
 
@@ -201,17 +178,19 @@ Ideology aside, the remaining large effects--again--come from holding positions 
 
 Our most puzzling finding comes from the negative effect of being in the majority, which, though it is statistically difference from zero, is not large. For Democrats, being in the majority actually leads to fewer gifted trips. The explanatory variables for why Democratic members are less likely to go on gift travel are probably related more to their district's geographic location, demographic features of their constituency, or policy-area expertise. Since we do not have district-level data in the current dataset it is impossible to speculate further.
 
-# Conclusion
+# Discussion
 
-With all of our data on the table, consider how our hypotheses faired. In all three models, the power hypothesis variables did a large proportion of the explanatory work. In each model, being a party leader or committee chair led to significantly more trips than the average member. The only caveat we found was that Democratic ranking members did not have statistically significant increases in trips. Our safety hypothesis, that electorally safe members would be more attractive bets for sponsoring organizations, turned out to be correct across the full model and the Democratic model, but the effect-size was miniscule in both cases. Seniority was statistically significant in our full model and did increase the number of gifted trips. But, seniority defied our expectations and appeared insignificant in the party-specific models. There is a very weak relationship between time served and number of gifted trips taken by members. Sponsoring organizations are most interested in targeting members with the power to impact legislation in the most meaningful ways. As the legislative process continues to centralize in the House, we can expect to see this targeting of party leaders and committee chairs by sponsors of gift travel continue.
+With all of our data on the table, consider how our hypotheses fared. In all three models, the power hypothesis variables did a large proportion of the explanatory work. In each model, being a party leader or committee chair led to significantly more trips than the average member. The only caveat we found was that Democratic ranking members did not have statistically significant increases in trips. Our safety hypothesis, that electorally safe members would be more attractive bets for sponsoring organizations, turned out to be correct across the full model and the Democratic model, but the effect-size was minuscule in both cases. Seniority was statistically significant in our full model and did increase the number of gifted trips. But, seniority defied our expectations and appeared insignificant in the party-specific models. There is a very weak relationship between time served and number of gifted trips taken by members. Sponsoring organizations are most interested in targeting members with the power to impact legislation in the most meaningful ways. As the legislative process continues to centralize in the House, we can expect to see this targeting of party leaders and committee chairs by sponsors of gift travel continue.
 
 Our ideology hypothesis, that ideologically extreme members will travel less, turned out to be wrong. While ideological extremity was significant across all three models, the direction was the opposite of what we theorized. We found that ideological extremity leads to more gift travel. In fact, in the Democratic model, ideological extremity had the largest effect of all the variables. This is not entirely surprising, as there is research indicating that some interest groups are aligned with one party or the other and that such alignment is driven by policy interests [@Koger2010]. If these policy and party interests align, gift travel might be the perfect avenue for influence by an interest group. Future work should investigate whether ideological similarity, as opposed to extremity, is the driving force here, as it may turn out that sponsoring organizations are themselves skewed toward the ideological poles.
 
 The last set of findings we present addresses the role of a member's party controlling the chamber. We found that majority status increases Republican members' number of trips, but decreases Democratic members' number of trips. Overall, we think this measure of majority status is actually picking up on district- or constituency-specific effects in a crude way. We do not currently have the data to model such explanatory factors, but this is a fertile area for future gift-travel research.
 
+# Conclusion
+
 A proper continuation of Alduncin, Parker, and Theriault's work [-@Alduncin2014; -@Alduncin2017] would examine who travels with whom and how often. Using what the Clerk of the House provides, we could determine which members were visiting the same locations at the same times, and use this information to investigate how member-level attributes relate to the partisan nature of their gift-travel behavior. Many trips gifted during the Congresses analyzed here involved members traveling together, and we still have yet to find out if party polarization's effect on CODEL travel is felt also on gift travel.
 
-Elaboration of this line of research should also try to better specify the relationship between sponsors and members. A measure of the ideological similarity would go a good ways in this regard, as would a more nuanced coding of the committee-related variables. Like sophisticated donors, sponsors may also target the committees most relevant to their policy goals [Barber2017]. 
+Elaboration of this line of research should also try to better specify the relationship between sponsors and members. A measure of the ideological similarity would go a good ways in this regard, as would a more nuanced coding of the committee-related variables. Like sophisticated donors, sponsors may also target the committees most relevant to their policy goals [Barber2017]. Another implication of this theory, whose testing will have to await further work, is that sponsors should target ideologically similar members for travel [@Barber2017], and members whose committee assignments are especially relevant to sponsors' policy preferences.   
 
 Gift travel is an overlooked aspect of members' relationships with interest groups and non-governmental organizations. Many questions are still unanswered. How does gift travel change over extended periods of time? What is it good for? Researchers should appreciate the potentially important things we have to learn from this unusual form of documented lobbying and travel.
 
