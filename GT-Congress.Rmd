@@ -1,7 +1,7 @@
 ---
 title: "Gift Travel in the U.S. Congress"
 author: "Philip R. Moniz & Zachary A. McGee"
-date: "8/28/2017"
+date: "9/13/2017"
 output:
   pdf_document: default
   word_document: default
@@ -9,7 +9,13 @@ casl: /Users/philipmoniz/Documents/Scholastic Scribblings/apsa.csl
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 ---
 
-Members of Congress and interest groups have a dynamic relationship. They are locked in a continuous dance in which either side influences the other in order to pursue its political goals. They are engaged in a mutually beneficial give-and-take, though the American public is always suspicious about the potential for corruption between these groups and their representatives.
+At the end of May 2013, ten members of Congress, along with thirty-two members of their staff and dozens of state legislators, traveled to the Baku, Azerbaijan, on the shore of the Caspian Sea, to take part in an all-expense-paid conference and cultural visit. They listened to speeches given by the president of Azerbaijan, three former advisors to President Obama; they heard briefings from the chairs of the Azerbaijani Parliament's foreign affairs and armed services committees, as well as at least three briefings pertaining to the country's state-owned oil company. U.S. representatives, many of whom brought along their spouses, also partook in local festivities, such as a fireworks show for the Republic Day of Azerbaijan, and a tour of the Old City. 
+
+The trip sparked controversy when it was reported that the Azerbaijan-affiliated nonprofits that sponsored the travel had used money that originated from the state-owned oil company that had held information sessions during the conference [@Tucker2014]. While it is legal for nongovernmental organziations to pay for members to go on such excursions, it is forbidden for members to accept travel offers from foreign countries or corporations that employ U.S. lobbyists, as well as meet with lobbyists at any time during their travel [@Wickham2015]. As per House rules, the members had all received approval from the House Ethics Committee before going to Baku, but, while they may not have know it, they were accepting illicit gifts from a foreign government; and upon their return to the United States, they were obligated to report if there had been any foreign or corporate sponsorship, which a report conducted by the Office of Congressional Ethics found that they had failed to do [@Tucker2014]. The *Washington Post* speculated that the trip, and the courtship of which it was a part, may have played a role in a few of members' decisions to sponsor amendments that exempted an Azerbaijani pipeline project from a sanctions bill that was under consideration at the time [@Choma2015; @Higham2015].
+
+The Office of Congressional Ethics ultimately recommended to the House Ethics Committee that the investigation into nine members who violated House code and federal law be further reviewed, and it was handed off to the Department of Justice [@OCE2015]. Interestingly, the OCE's report, though not its findings of fact, was release by the Ethics Committee. This episode highlights the potential for NGO-sponsored travel to be gamed by the sponsors, the laxness of the self-reporting system, and the difficulty in connecting what goes on during these trips with legislators' preferences and behavior. It should be noted that while this particular trip was unusual because it was found to have broken House rules and maybe federal law (e.g., the Emoluments Clause), in many other ways it was an ordinary instance of gift travel. Members were invited by a nonprofit to listen to speeches in and tour around a foreign country. Though the conference halls were festooned with corporate logos, such as BP's, the members found nothing suspicious about the event's proceedings [@Luxner2013]. The speeches and briefings and mingling were all a part of what a member typically experiences on a NGO-sponsored trip.
+
+As the Baku episode illustrates, members of Congress and interest groups have a dynamic relationship. They are locked in a continuous dance in which either side influences the other in order to pursue its political goals. They are engaged in a mutually beneficial give-and-take, though the American public is always suspicious about the potential for corruption between these groups and their representatives.
 
 Suspicious of these relationships too, political scientists have investigated how interest groups, corporations, and think tanks--and their respective Political Action Committees--attempt to influence policymakers. The empirical evidence with regard to exogenous actors directly "buying" members votes has not found much of a relationship [@Welch1982; @Wright1990]. However, contributions that are timed correctly, such as before critical votes, have given scholars pause [@Stratmann1998]. And, certain groups seem to invest in members long-term [@Snyder1992].
 
@@ -53,9 +59,9 @@ The second speculation is less obviously relevant than the first to gift travel 
 
 # Data
 
-The data for this analysis come from the website of the Clerk of the House. The Clerk publishes yearly all of the gift travel reports that representatives file. This paper analyzes these reports from the 110th through the 114th Congresses (2007-2017). These data, after cleaning, collapsing duplicate trip entries, and aggregating by member, consist of 2180 observations, which are at the level of the member per Congress.[^3]
+The data for this analysis come from the website of the Clerk of the House. The Clerk has published yearly, since 2007, when House rules changed and this system of reporting began, all of the gift travel reports that representatives file [@Dent2015, 11]. This paper analyzes these reports from the 110th through the 114th Congresses (2007-2017). These data, after cleaning, collapsing duplicate trip entries, and aggregating by member, consist of 2180 observations, which are at the level of the member per Congress.[^3]
 
-[^3]: Interestingly, almost half of the original entries were duplicates. For example, one of Speaker Boehner's trips to Jacksonville, Florida had 18 separate but identical filings in the 114th Congress' reports. Why this occurs is unclear, but perhaps the high rate of duplication indicates an eagerness to comply with the Rules.
+[^3]: Interestingly, almost half of the original entries were duplicates. For example, one of Speaker Boehner's trips to Jacksonville, Florida had 18 separate but identical filings in the 114th Congress' reports. Why this occurs is unclear.
 
 ### Sponsors; or, the Givers
 
