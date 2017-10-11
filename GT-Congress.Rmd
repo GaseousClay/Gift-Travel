@@ -1,13 +1,13 @@
 ---
 title: 'Come Fly with Me: Gift Travel in the U.S. House of Representatives'
 author: "Philip R. Moniz & Zachary A. McGee"
-date: "9/26/2017"
+date: \today
 output:
   pdf_document: default
   word_document: default
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 ---
-\abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study of the trips that members go on at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. Since 2007, Congressional rules have required members to report all gifted travel, and we analyze all reports from 2007 to 2016. We have to big findings: interest groups target powerful members, committee chairs and ranking members, over the rank and file; and more ideologically extreme members are no less likely than their moderate counterparts to go on gifted trips. The data allow us to characterize the universe of trip sponsors as dominated by a few recurring actors but populated with many sponsors total. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
+\abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study of the trips that members go on at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. Since 2007, Congressional rules have required members to report all gifted travel, and we analyze all reports from 2007 to 2017. We have to big findings: interest groups target powerful members, committee chairs and ranking members, over the rank and file; and more ideologically extreme members are no less likely than their moderate counterparts to go on gifted trips. The data allow us to characterize the universe of trip sponsors as dominated by a few recurring actors but populated with many sponsors total. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
 
 \newpage
 
