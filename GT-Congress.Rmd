@@ -59,9 +59,9 @@ The second speculation is less obviously relevant than the first to gift travel 
 
 # Data
 
-The data for this analysis come from the website of the Clerk of the House. The Clerk has published yearly, since 2007, when House rules changed and this system of reporting began, all of the gift travel reports that representatives file [@Dent2015, 11]. This paper analyzes these reports from the 110th through the 114th Congresses (2007-2017). These data, after cleaning, collapsing duplicate trip entries, and aggregating by member, consist of 2180 observations, which are at the level of the member per Congress.[^3] Over the course of the ten-year period for which we have data, members reported spending 42,388 days engaged in gift travel, with each member traveling an average 19 days per biennium.   
+The data for this analysis come from the website of the Clerk of the House. Every year since 2007, the Clerk has published all gift travel reports [@Dent2015, 11]. This paper analyzes these reports from the 110th through the 114th Congresses (2007-2017). These data, after cleaning, collapsing duplicate trip entries, and aggregating by member, consist of 2180 observations, which are at the level of the member per Congress. Over the course of the ten-year period for which we have data, members reported spending 42,388 days engaged in gift travel, with each member traveling an average 19 days per biennium. 
 
-[^3]: Interestingly, almost half of the original entries were duplicates. For example, one of Speaker Boehner's trips to Jacksonville, Florida had 18 separate but identical filings in the 114th Congress' reports. Why this occurs is unclear.
+It is important to note that although every trip is reported in connection with a member, members themselves do not go on all trips; sometimes staffers are sent in their stead. It is more accurate to think of the members here as including their staff and professional team. 
 
 ### Sponsors; or, the Givers
 
@@ -98,8 +98,6 @@ We also code for whether the member was part of the party controlling the House.
 *Chair* indicates whether the member was the chair of a committee. *Committee* denotes those who were ranking members on their committees. 
 
 Finally, there is *party leader*, which captures whether the member is Speaker, majority or minority leader, a whip, or the chair of either the Republican or Democratic caucus.
-
-Following Alduncin, Parker, and Theriault [-@Alduncin2017], we run the analyses separately for the two parties under the assumption that the explanatory variables may operate differently within each party. We do include whole-chamber analyses for comparison.
 
 ```{r, echo = F, include = F}
 library(ggplot2)
