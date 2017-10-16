@@ -82,7 +82,7 @@ Not all members go on gift travel, but most of them do. Of the 2180 total member
 ```{r, echo = F}
 library(ggplot2)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x=trips)) + geom_histogram(bins = 30, color="darkblue", fill="lightblue") + theme_classic() + ggtitle("Figure 1: Histogram of Gift-Travel Trips")
+ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="black", fill="purple", alpha=0.4) + theme_classic() + labs(x="Numer of Trips", y="Number of Members")
 ```
 
 Democrats travel less often, on average, compared to Republicans (see Figure 2). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7$). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3$).
@@ -99,10 +99,11 @@ We also code for whether the member was part of the party controlling the House.
 
 Finally, there is *party leader*, which captures whether the member is Speaker, majority or minority leader, a whip, or the chair of either the Republican or Democratic caucus.
 
-```{r, echo = F, include = F}
+```{r, echo = F}
 library(ggplot2)
+library(RColorBrewer)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x = trips, color = as.factor(party))) + geom_histogram(bins = 15, fill="white", alpha=0.5, position="dodge") + theme_classic() + ggtitle("Figure 2: Histogram of Trips by Party (Red = Democrat)")
+ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="dodge") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("blue", "red"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Numer of Trips", y="Number of Members")
 ```
 
 # Models and Results
@@ -114,63 +115,187 @@ Our dependent variable is a count, i.e., a sum of binary items (traveled or did 
 <!-- Our main model representing congressional gift travel is linear and additive. I estimate the parameters using ordinary least squares, the results of which are reported in Table 2. Starting at the top of the table, we see two variables, among both parties, that are not statistically different from zero: win percentage and seniority. These null results are surprising because previous work on foreign travel has found significant effects for vote percentage and level of seniority on the number of country-days traveled as part of a Congressional Delegation [@Alduncin2017]. -->
 
 \begin{table}[!htbp] \centering 
-  \caption{Negative Binomial Regression - Gift Travel (110th-114th Congresses)} 
+  \caption{Effects on Total Number of Gifted Trips - 110th-114th Congresses} 
   \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
-\\[-1.8ex] & \multicolumn{3}{c}{Count of Total Gifted Trips} \\ 
- & Full Model & Republicans & Democrats \\
-\\[-1.8ex] & (1) & (2) & (3)\\ 
+\\[-1.8ex] & Count of Total Gifted Trips \\ 
 \hline \\[-1.8ex] 
- Democrat & $-$0.194$^{***}$ &  &  \\ 
-  & (0.038) &  &  \\ 
-  & & & \\ 
- Majority Status &  & 0.272$^{**}$ & $-$0.243$^{**}$ \\ 
-  &  & (0.097) & (0.091) \\ 
-  & & & \\ 
- Ideological Extremity & 0.865$^{***}$ & 0.564$^{***}$ & 1.864$^{***}$ \\ 
-  & (0.120) & (0.134) & (0.270) \\ 
-  & & & \\ 
- Win Percentage & 0.007$^{***}$ & 0.002 & 0.007$^{**}$ \\ 
-  & (0.001) & (0.002) & (0.002) \\ 
-  & & & \\ 
- Seniority & 0.013$^{**}$ & 0.008 & 0.010 \\ 
-  & (0.004) & (0.006) & (0.007) \\ 
-  & & & \\ 
- Chair & 0.748$^{***}$ & 0.661$^{***}$ & 0.864$^{***}$ \\ 
-  & (0.083) & (0.089) & (0.154) \\ 
-  & & & \\ 
- Committee (Ranking Member) & 0.350$^{***}$ & 0.677$^{***}$ & 0.161 \\ 
-  & (0.087) & (0.118) & (0.129) \\ 
-  & & & \\ 
- Party Leader & 0.735$^{***}$ & 0.766$^{***}$ & 0.764$^{***}$ \\ 
-  & (0.131) & (0.151) & (0.211) \\ 
-  & & & \\ 
- 114th Congress & 0.883$^{***}$ & 0.921$^{***}$ & 0.411$^{***}$ \\ 
-  & (0.061) & (0.119) & (0.120) \\ 
-  & & & \\ 
- 113th Congress & 0.742$^{***}$ & 0.697$^{***}$ & 0.468$^{***}$ \\ 
-  & (0.060) & (0.116) & (0.119) \\ 
-  & & & \\ 
- 112th Congress & 0.571$^{***}$ & 0.395$^{***}$ & 0.488$^{***}$ \\ 
-  & (0.061) & (0.115) & (0.119) \\ 
-  & & & \\ 
- 111th Congress & 0.387$^{***}$ & 0.564$^{***}$ & 0.286$^{**}$ \\ 
-  & (0.062) & (0.082) & (0.090) \\ 
-  & & & \\ 
- Constant & $-$0.458$^{**}$ & 0.042 & $-$1.386$^{***}$ \\ 
-  & (0.145) & (0.183) & (0.271) \\ 
-  & & & \\ 
+ Ideological Extremity & 0.348$^{*}$ \\ 
+  & (0.142) \\ 
+  & \\ 
+ Democrat & $-$1.886$^{***}$ \\ 
+  & (0.276) \\ 
+  & \\ 
+ Win Percentage & 0.005$^{**}$ \\ 
+  & (0.001) \\ 
+  & \\ 
+ Ranking Member & 0.627$^{***}$ \\ 
+  & (0.132) \\ 
+  & \\ 
+ Seniority & 0.008 \\ 
+  & (0.005) \\ 
+  & \\ 
+ Committee Chair & 0.761$^{***}$ \\ 
+  & (0.082) \\ 
+  & \\ 
+ Party Leader & 0.755$^{***}$ \\ 
+  & (0.129) \\ 
+  & \\ 
+ 114th Congress & 0.850$^{***}$ \\ 
+  & (0.062) \\ 
+  & \\ 
+ 113th Congress & 0.776$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ 112th Congress & 0.602$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ 111th Congress & 0.407$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ Ideological Extremity x Democrat & 1.698$^{***}$ \\ 
+  & (0.270) \\ 
+  & \\ 
+ Ranking Member x Democrat & $-$0.490$^{**}$ \\ 
+  & (0.171) \\ 
+  & \\ 
+ Constant & 0.224 \\ 
+  & (0.179) \\ 
+  & \\ 
 \hline \\[-1.8ex] 
-Observations & 2,180 & 1,102 & 1,078 \\ 
-Log Likelihood & $-$5,503.002 & $-$2,786.823 & $-$2,638.505 \\ 
-$\theta$ & 2.041$^{***}$  (0.097) & 3.320$^{***}$  (0.256) & 1.571$^{***}$  (0.103) \\ 
+Observations & 2,180 \\ 
+Log Likelihood & $-$5,478.676 \\ 
+$\theta$ & 2.129$^{***}$  (0.104) \\ 
 \hline 
-\hline \\[-1.8ex] 
-\textit{Note: Standard errors reported in parentheses.}  & \multicolumn{3}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\
+\hline \\[-1.8ex]
+\textit{Note: Standard errors reported in parentheses.}  & \multicolumn{1}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\
 \end{tabular} 
 \end{table}
+
+\begin{table}[]
+\centering
+\caption{Predicted Number of Trips}
+\label{}
+\begin{tabular}{@{}lll@{}}
+\toprule
+                            & 0                 & 1                 \\ \midrule
+Committee Chair             & 2.58              & 5.52              \\
+                            & {[}2.33 - 2.85{]} & {[}4.62 - 6.59{]} \\
+Democrat                    & 2.58              & 2.17              \\
+                            & {[}2.33 - 2.85{]} & {[}1.97 - 2.39{]} \\
+Party Leader                & 2.58              & 5.49              \\
+                            & {[}2.33 - 2.85{]} & {[}4.20 - 7.17{]} \\
+Ranking Member (Democrat=0) & 2.58              & 4.83              \\
+                            & {[}2.33 - 2.85{]} & {[}3.75 - 6.22{]} \\
+Ranking Member (Democrat=1) & 2.17              & 2.49              \\
+                            & {[}1.97 - 2.39{]} & {[}1.98 - 3.15{]} \\ \bottomrule
+\end{tabular}
+\end{table}
+
+```{r, echo = F}
+library(ggplot2)
+library(RColorBrewer)
+#set up data and multiplot function
+giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
+finalmodel <- glm.nb(trips ~ extreme*democrat + winpct + committee*democrat + seniority + chairman + party.leader + fourteenth + thirteenth + twelfth + eleventh, data = giftdata)
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
+
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+
+  numPlots = length(plots)
+
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                    ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+
+ if (numPlots==1) {
+    print(plots[[1]])
+
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
+}
+
+#predicted values
+extremitydata <- data.frame(extreme = giftdata$extreme, democrat = 0, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+extremitydataD1 <- data.frame(extreme = giftdata$extreme, democrat = 1, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+winpctdata <- data.frame(extreme = mean(giftdata$extreme), democrat = 0, winpct = giftdata$winpct, seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+senioritydata <- data.frame(extreme = mean(giftdata$extreme), democrat = 0, winpct = mean(giftdata$winpct), seniority = giftdata$seniority, chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+extremitydata$phat <- predict(finalmodel, extremitydata, type = "response")
+extremitydataD1$phat <- predict(finalmodel, extremitydataD1, type = "response")
+winpctdata$phat <- predict(finalmodel, winpctdata, type = "response")
+senioritydata$phat <- predict(finalmodel, senioritydata, type = "response")
+
+#prep for plots
+extremitydataCI <- data.frame(extremitydata)
+extremitydataCI <- cbind(extremitydataCI, predict(finalmodel, extremitydata, type = "link", se.fit = T))
+extremitydataCI <- within(extremitydataCI, {
+  Trips <- exp(fit)
+  LL <- exp(fit - 1.96 * se.fit)
+  UL <- exp(fit + 1.96 * se.fit)})
+
+extremitydataD1CI <- data.frame(extremitydataD1)
+extremitydataD1CI <- cbind(extremitydataD1CI, predict(finalmodel, extremitydataD1, type = "link", se.fit = T))
+extremitydataD1CI <- within(extremitydataD1CI, {
+  Trips <- exp(fit)
+  LL <- exp(fit - 1.96 * se.fit)
+  UL <- exp(fit + 1.96 * se.fit)})
+
+winpctdataCI <- data.frame(winpctdata)
+winpctdataCI <- cbind(winpctdataCI, predict(finalmodel, winpctdata, type = "link", se.fit = T))
+winpctdataCI <- within(winpctdataCI, {
+  Trips <- exp(fit)
+  LL <- exp(fit - 1.96 * se.fit)
+  UL <- exp(fit + 1.96 * se.fit)})
+
+senioritydataCI <- data.frame(senioritydata)
+senioritydataCI <- cbind(senioritydataCI, predict(finalmodel, senioritydata, type = "link", se.fit = T))
+senioritydataCI <- within(senioritydataCI, {
+  Trips <- exp(fit)
+  LL <- exp(fit - 1.96 * se.fit)
+  UL <- exp(fit + 1.96 * se.fit)})
+
+#plots
+mypalette <- brewer.pal(3,"Purples")
+p1 <- ggplot(extremitydataCI, aes(extreme, Trips)) +
+  geom_ribbon(aes(ymin = LL, ymax = UL, fill = democrat), alpha = .25) +
+  geom_line(aes(colour = committee), size = 1) +
+  labs(x = "Ideological Extremity", y = "Predicted Trips (Democrat = 0)") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+p2 <- ggplot(extremitydataD1CI, aes(extreme, Trips)) +
+  geom_ribbon(aes(ymin = LL, ymax = UL, fill = chairman), alpha = .25) +
+  geom_line(aes(colour = party.leader), size = 1) +
+  labs(x = "Ideological Extremity", y = "Predicted Trips (Democrat = 1)") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+p3 <- ggplot(winpctdataCI, aes(winpct, Trips)) +
+  geom_ribbon(aes(ymin = LL, ymax = UL, fill = committee), alpha = .25) +
+  geom_line(aes(colour = committee), size = 1) +
+  labs(x = "Win Percentage", y = "Predicted Trips") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+p4 <- ggplot(senioritydataCI, aes(seniority, Trips)) +
+  geom_ribbon(aes(ymin = LL, ymax = UL, fill = fourteenth), alpha = .25) +
+  geom_line(aes(colour = fourteenth), size = 1) +
+  labs(x = "Terms Served in the House", y = "Predicted Trips") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+
+multiplot(p1, p3, p2, p4, cols=2)
+```
 
 Our full model includes members from both parties $(n=2180)$, which we account for by including a variable that indicates whether a member is a Democrat or not. From the negative coefficient on our party variable we can confirm what we saw from our descriptive statistics--Democrats travel less frequently than Republicans. The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. More ideologically extreme members travel more, contrary to our theoretical expectations. Ideological extremity has the largest effect among our explanatory variables. Before speculating too much on our ideology finding, we will see if extremity has the same effects among Democrats and Republicans. Gift travel may be an avenue for ideological groups to reward loyal members and provide them with information subsidies.
 
