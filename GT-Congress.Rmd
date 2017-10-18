@@ -112,81 +112,144 @@ Our dependent variable is a count, i.e., a sum of binary items (traveled or did 
 
 [^4]: Overdispersion occurs when the observed variance is larger than the expected variance from a given model [@Collett2003].
 
-\begin{table}[!htbp] \centering 
-  \caption{Effects on Total Number of Gifted Trips - 110th-114th Congresses} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
-\\[-1.8ex] & Count of Total Gifted Trips \\ 
-\hline \\[-1.8ex] 
- Ideological Extremity & 0.348$^{*}$ \\ 
-  & (0.142) \\ 
-  & \\ 
- Democrat & $-$1.886$^{***}$ \\ 
-  & (0.276) \\ 
-  & \\ 
- Win Percentage & 0.005$^{**}$ \\ 
-  & (0.001) \\ 
-  & \\ 
- Ranking Member & 0.627$^{***}$ \\ 
-  & (0.132) \\ 
-  & \\ 
- Seniority & 0.008 \\ 
-  & (0.005) \\ 
-  & \\ 
- Committee Chair & 0.761$^{***}$ \\ 
-  & (0.082) \\ 
-  & \\ 
- Party Leader & 0.755$^{***}$ \\ 
-  & (0.129) \\ 
-  & \\ 
- 114th Congress & 0.850$^{***}$ \\ 
-  & (0.062) \\ 
-  & \\ 
- 113th Congress & 0.776$^{***}$ \\ 
-  & (0.061) \\ 
-  & \\ 
- 112th Congress & 0.602$^{***}$ \\ 
-  & (0.061) \\ 
-  & \\ 
- 111th Congress & 0.407$^{***}$ \\ 
-  & (0.061) \\ 
-  & \\ 
- Ideological Extremity x Democrat & 1.698$^{***}$ \\ 
-  & (0.270) \\ 
-  & \\ 
- Ranking Member x Democrat & $-$0.490$^{**}$ \\ 
-  & (0.171) \\ 
-  & \\ 
- Constant & 0.224 \\ 
-  & (0.179) \\ 
-  & \\ 
-\hline \\[-1.8ex] 
-Observations & 2,180 \\ 
-Log Likelihood & $-$5,478.676 \\ 
-$\theta$ & 2.129$^{***}$  (0.104) \\ 
-\hline 
-\hline \\[-1.8ex]
-\textit{Note: Standard errors reported in parentheses.}  & \multicolumn{1}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\
-\end{tabular} 
+# Results
+
+Do members of Congress differ in how many gift trips they go on? What characteristics separate those who travel often from those who stay in Washington? The results from our statistical analysis offer answers to these questions. As our theory led us to expect, members in positions of power---party leaders, committee chairs and ranking members---on average go on significantly more gift trips than the rank and file. The statistically significant parameter estimates for the power variables indicate that this is the case, but they do not give us a clear idea of how many more trips per Congress such powerful members are estimated to go on. For the substantive meaning of the estimates, we calculate the contribution each explanatory variable makes to the predicted number of trips, and we plot the changes in Figure X. For instance, holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113%. 
+
+Members in the highest positions of their committees also travel at a higher rate. For members of both parties, the effect of being a committee chair is almost identical in size to being a party leader, while the effect of ranking member differs across party. Republican ranking members do see a significantly larger amount of travel, going on an estimated 2.25 more trips (87% increase). The same is not true for Democratic ranking members in our data. Though larger, the number of trips they go on is not statistically different from the number of trips non-ranking members take. Why this should be so is unclear, but as we will soon see, some Democratic members make up for it with the appeal of their higher liberalism.
+
+The interactive effect of ideological extremity and party on the number of gift-travel trips members go on is the second major finding of this paper. It is important not only because the magnitude of its effect is large but also because it reveals how ideology works to attract sponsors toward members in different degrees depending on their party. The first thing to note is that ideologically extreme members are more likely than their moderate colleagues to venture out at the invitation of sponsoring organizations. The large positive effect of ideological extremity holds for members of both parties. But the size of the effect is larger for Democrats than it is for Republicans. The estimated number of trips for Republicans rises from 2.1 to 3.3 (57% increase), while the number for Democrats jumps from 1.8 to 4.8 (167% increase). So, what a Democrat may lack in committee power in the eyes of sponsors, she may make up for in ideological constancy.
+
+We also find some interesting null effects. Though we expected otherwise, more senior and electorally safe members are no more likely than their marginal freshman counterparts to take a trip on someone else's dime. The fixed effects for Congressional term provide us with further information, namely that gift travel appears to be steadily increasing in frequency since records began in 2007. Lastly, it is important to note that, all things considered, Republicans of the rank and file go on average 2.6 total per Congress, which is 0.4 trips (18%) more than similar Democrats. Republicans in general have been going on more gift travel than Democrats.  
+
+<!---
+Our full model includes members from both parties $(n=2180)$, which we account for by including a variable that indicates whether a member is a Democrat or not. From the negative coefficient on our party variable we can confirm what we saw from our descriptive statistics---Democrats travel less frequently than Republicans. The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. More ideologically extreme members travel more, contrary to our theoretical expectations. Ideological extremity has the largest effect among our explanatory variables. Before speculating too much on our ideology finding, we will see if extremity has the same effects among Democrats and Republicans. Gift travel may be an avenue for ideological groups to reward loyal members and provide them with information subsidies.
+=======
+\begin{table}[]
+\centering
+\caption{Predicted Number of Trips}
+\label{}
+\begin{tabular}{@{}lll@{}}
+\toprule
+                            & 0                 & 1                 \\ \midrule
+Committee Chair             & 2.58              & 5.52              \\
+                            & {[}2.33 - 2.85{]} & {[}4.62 - 6.59{]} \\
+Democrat                    & 2.58              & 2.17              \\
+                            & {[}2.33 - 2.85{]} & {[}1.97 - 2.39{]} \\
+Party Leader                & 2.58              & 5.49              \\
+                            & {[}2.33 - 2.85{]} & {[}4.20 - 7.17{]} \\
+Ranking Member (Democrat=0) & 2.58              & 4.83              \\
+                            & {[}2.33 - 2.85{]} & {[}3.75 - 6.22{]} \\
+Ranking Member (Democrat=1) & 2.17              & 2.49              \\
+                            & {[}1.97 - 2.39{]} & {[}1.98 - 3.15{]} \\ \bottomrule
+\end{tabular}
 \end{table}
 
+```{r, echo = F}
+library(ggplot2)
+library(RColorBrewer)
+#set up data and multiplot function
+giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
+finalmodel <- glm.nb(trips ~ extreme*democrat + winpct + committee*democrat + seniority + chairman + party.leader + fourteenth + thirteenth + twelfth + eleventh, data = giftdata)
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
 
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
 
-The last set of variables relate to our power hypothesis. Being a party leader or a committee chair both provide large effects. Leadership positions lead to more trips and this suggests these powerful positions are important drivers of more gifted trips. Being a committee's ranking member also has a positive effect on gift travel, but the effect is about half that of being the chair of the committee.
+  numPlots = length(plots)
 
-Turning to our party-specific analysis, we will first focus on the Republicans $(n=1102)$. The largest effects, again, come from holding positions of power: party leaders, committee ranking members, and committee chairs. As hypothesized, each of these statuses increases the number of trips for a given member. Being in the majority also leads to more trips for Republicans. If sponsors are seeking influence from members who can get things done in a polarized Congress then targeting the most powerful members is a logical strategy. Power, in this instance, means the ability to control the rules and/or be at the table to draft bills. As regular order fades and the bill drafting process is restricted to fewer and fewer members, impacting the members who have a seat at the table will be critical for sponsoring organizations hoping to have policy influence [@Sinclair2012; @Curry2015]. We imagine if we had data going back to the mid-twentieth century, these results might look different for those Congresses, with trips more evenly distributed among members.
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                    ncol = cols, nrow = ceiling(numPlots/cols))
+  }
 
-Ideological extremity also has a large and significant effect-size. While the direction of the effect is not what we theorized it may be, this finding is still not shocking. Factionalism within the House Republican Party has been prominent in recent years. The creation of the Tea Party Caucus, following the 2010 elections, and then the formation of the House Freedom Caucus, at the start of the 114th Congress, both serve as recent examples. These factions are easy targets for conservative think tanks to send members on information-subsidy trips.
+ if (numPlots==1) {
+    print(plots[[1]])
 
-Seniority turns out to be statistically insignificant in the GOP model and it is also joined by win percentage in that designation. These results lead us to believe that sponsors must be less concerned about the electoral safety of members, which may suggest that they indeed care more about short-term policy influence. With term limits imposed on committee chairmanships, it is not shocking that sponsors may seek shorter-term influence, focusing mainly on members who have positions of power despite how long they may have served. If it is true that short-term influence is the goal, then seniority's insignificance in affecting gift travel follows this same logic.
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
 
-Focusing now on the Democrats $(n=1078)$, the largest effect comes from ideological extremity. More liberal Democrats go on more gifted trips. Where we found conservatives to have ideological glue sending them on gift travel, the liberals seem to be bound by ideological superglue. The effect size for ideological extremity among Democrats is triple what it is among Republicans. The largest ideological caucus among House Democrats is the Congressional Progressive Caucus (CPC). The CPC currently has 75 members in the House, which is nearly 40% of the House Democratic Caucus. It is possible that large swaths of these members are going on gifted trips together. Or, the sharp difference in effect sizes could also be representative of an asymmetry in the underlying organizations of the two parties. As Grossmann and Hopkins [-@Grossmann2016] argue, Democrats may be more likely to be rewarded for concrete solutions-based governance. If Democrats do have a different incentive structure, it makes sense that the most extreme members are actively engaging in fact-finding missions and information processing at the behest of gift-travel sponsors--in search of policy solutions [@Baumgartner2015].
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
 
-Ideology aside, the remaining large effects--again--come from holding positions of power. Committee chairs have larger effects than party leaders among the Democrats. Interestingly, status as a ranking member is not statistically significant. Win percentage returns as a significant factor, with a very tiny effect-size. Safer members go on marginally more gifted trips. Seniority remains insignificant.
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
+}
 
-Our most puzzling finding comes from the negative effect of being in the majority, which, though it is statistically different from zero, is not large. For Democrats, being in the majority actually leads to fewer gifted trips. The explanatory variables for why Democratic members are less likely to go on gift travel are probably related more to their district's geographic location, demographic features of their constituency, or policy-area expertise. Since we do not have district-level data in the current dataset it is impossible to speculate further.
+#predicted values
+extremitydata <- data.frame(extreme = giftdata$extreme, democrat = 0, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+extremitydataD1 <- data.frame(extreme = giftdata$extreme, democrat = 1, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+winpctdata <- data.frame(extreme = mean(giftdata$extreme), democrat = 0, winpct = giftdata$winpct, seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+senioritydata <- data.frame(extreme = mean(giftdata$extreme), democrat = 0, winpct = mean(giftdata$winpct), seniority = giftdata$seniority, chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+extremitydata$phat <- predict(finalmodel, extremitydata, type = "response")
+extremitydataD1$phat <- predict(finalmodel, extremitydataD1, type = "response")
+winpctdata$phat <- predict(finalmodel, winpctdata, type = "response")
+senioritydata$phat <- predict(finalmodel, senioritydata, type = "response")
+
+#prep for plots
+extremitydataCI <- data.frame(extremitydata)
+extremitydataCI <- cbind(extremitydataCI, predict(finalmodel, extremitydata, type = "link", se.fit = T))
+extremitydataCI <- within(extremitydataCI, {
+  Trips <- exp(fit)
+  LL <- exp(fit - 1.96 * se.fit)
+  UL <- exp(fit + 1.96 * se.fit)})
+
+extremitydataD1CI <- data.frame(extremitydataD1)
+extremitydataD1CI <- cbind(extremitydataD1CI, predict(finalmodel, extremitydataD1, type = "link", se.fit = T))
+extremitydataD1CI <- within(extremitydataD1CI, {
+  Trips <- exp(fit)
+  LL <- exp(fit - 1.96 * se.fit)
+  UL <- exp(fit + 1.96 * se.fit)})
+
+winpctdataCI <- data.frame(winpctdata)
+winpctdataCI <- cbind(winpctdataCI, predict(finalmodel, winpctdata, type = "link", se.fit = T))
+winpctdataCI <- within(winpctdataCI, {
+  Trips <- exp(fit)
+  LL <- exp(fit - 1.96 * se.fit)
+  UL <- exp(fit + 1.96 * se.fit)})
+
+senioritydataCI <- data.frame(senioritydata)
+senioritydataCI <- cbind(senioritydataCI, predict(finalmodel, senioritydata, type = "link", se.fit = T))
+senioritydataCI <- within(senioritydataCI, {
+  Trips <- exp(fit)
+  LL <- exp(fit - 1.96 * se.fit)
+  UL <- exp(fit + 1.96 * se.fit)})
+
+#plots
+mypalette <- brewer.pal(3,"Purples")
+p1 <- ggplot(extremitydataCI, aes(extreme, Trips)) +
+  geom_ribbon(aes(ymin = LL, ymax = UL, fill = democrat), alpha = .25) +
+  geom_line(aes(colour = committee), size = 1) +
+  labs(x = "Ideological Extremity", y = "Predicted Trips (Democrat = 0)") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+p2 <- ggplot(extremitydataD1CI, aes(extreme, Trips)) +
+  geom_ribbon(aes(ymin = LL, ymax = UL, fill = chairman), alpha = .25) +
+  geom_line(aes(colour = party.leader), size = 1) +
+  labs(x = "Ideological Extremity", y = "Predicted Trips (Democrat = 1)") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+p3 <- ggplot(winpctdataCI, aes(winpct, Trips)) +
+  geom_ribbon(aes(ymin = LL, ymax = UL, fill = committee), alpha = .25) +
+  geom_line(aes(colour = committee), size = 1) +
+  labs(x = "Win Percentage", y = "Predicted Trips") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+p4 <- ggplot(senioritydataCI, aes(seniority, Trips)) +
+  geom_ribbon(aes(ymin = LL, ymax = UL, fill = fourteenth), alpha = .25) +
+  geom_line(aes(colour = fourteenth), size = 1) +
+  labs(x = "Terms Served in the House", y = "Predicted Trips") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+
+multiplot(p1, p3, p2, p4, cols=2)
+```
+
+Our full model includes members from both parties $(n=2180)$, which we account for by including a variable that indicates whether a member is a Democrat or not. From the negative coefficient on our party variable we can confirm what we saw from our descriptive statistics--Democrats travel less frequently than Republicans. The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. More ideologically extreme members travel more, contrary to our theoretical expectations. Ideological extremity has the largest effect among our explanatory variables. Before speculating too much on our ideology finding, we will see if extremity has the same effects among Democrats and Republicans. Gift travel may be an avenue for ideological groups to reward loyal members and provide them with information subsidies.
+>>>>>>> master
 --->
 
 <!--- Notes for discussion
