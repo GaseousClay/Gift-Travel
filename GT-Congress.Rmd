@@ -75,7 +75,9 @@ To get some notion of who the big players are, let's look briefly at the top fiv
 
 ### Dependent variable
 
-We have one primary dependent variable: *trips* is a count of the number of separate journeys reported by each member to the Clerk of the House; each unique report counts as one trip. 
+We have one primary dependent variable: *trips*. It is a count, i.e., a sum of binary items (traveled or did not), and it is over-dispersed.[^4] Further, there is heterogeneity across individuals' probabilities of traveling. Each member of Congress does not have an equal probability of being selected to travel by a sponsoring organization. This is especially true of party leaders or committee chairs where some members hold more power or policy expertise than rank-and-file members. We also include fixed-effects for each Congress. Therefore, we estimate a negative binomial regression using maximum likelihood.
+
+[^4]: Overdispersion occurs when the observed variance is larger than the expected variance from a given model [@Collett2003]. a count of the number of separate journeys reported by each member to the Clerk of the House; each unique report counts as one trip. 
 
 Not all members go on gift travel, but most of them do. Of the 2180 total members, 292 (13.4%) did not go on a single trip. Similarly, 253 members (11.6%) went on exactly one, 42 (11.4%) went on two, 255 (11.7%) went on three, with 4.8 trips being the mean. Figure 1 shows a histogram of the number of trips taken by all the members. The figure is heavily right-skewed (mean = 4.8, sd = 4.7, median = 4), with only 30 members going on 20 or more trips. The member to go on the most trips, 50, was Fred Upton (MI-R), both a committee chairman and a senior member. Louise Slaughter (NY-D), another senior member in a high-ranking committee position, though in the minority party, went on zero trips during the 114th Congress.
 
@@ -103,14 +105,11 @@ Finally, there is *party leader*, which captures whether the member is Speaker, 
 library(ggplot2)
 library(RColorBrewer)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="dodge") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("blue", "red"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Numer of Trips", y="Number of Members")
+ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="dodge") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("blue", "red"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Number of Trips", y="Number of Members")
 ```
 
 # Models and Results
 
-Our dependent variable is a count, i.e., a sum of binary items (traveled or did not), and it is over-dispersed.[^4] Further, there is heterogeneity across individuals' probability of traveling. Therefore, we use a negative binomial regression estimated via maximum likelihood. Each member of Congress does not have an equal probability of being selected to travel by a sponsoring organization. This is especially true of party leaders or committee chairs where some members hold more power or policy expertise than rank-and-file members. We also include fixed-effects for each Congress.
-
-[^4]: Overdispersion occurs when the observed variance is larger than the expected variance from a given model [@Collett2003].
 
 # Results
 
