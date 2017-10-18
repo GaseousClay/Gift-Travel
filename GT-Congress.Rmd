@@ -82,7 +82,7 @@ Not all members go on gift travel, but most of them do. Of the 2180 total member
 ```{r, echo = F}
 library(ggplot2)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x=trips)) + geom_histogram(bins = 30, color="darkblue", fill="lightblue") + theme_classic() + ggtitle("Figure 1: Histogram of Gift-Travel Trips")
+ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="black", fill="purple", alpha=0.4) + theme_classic() + labs(x="Numer of Trips", y="Number of Members")
 ```
 
 Democrats travel less often, on average, compared to Republicans (see Figure 2). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7$). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3$).
@@ -99,10 +99,11 @@ We also code for whether the member was part of the party controlling the House.
 
 Finally, there is *party leader*, which captures whether the member is Speaker, majority or minority leader, a whip, or the chair of either the Republican or Democratic caucus.
 
-```{r, echo = F, include = F}
+```{r, echo = F}
 library(ggplot2)
+library(RColorBrewer)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x = trips, color = as.factor(party))) + geom_histogram(bins = 15, fill="white", alpha=0.5, position="dodge") + theme_classic() + ggtitle("Figure 2: Histogram of Trips by Party (Red = Democrat)")
+ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="dodge") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("blue", "red"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Numer of Trips", y="Number of Members")
 ```
 
 # Models and Results
@@ -112,74 +113,66 @@ Our dependent variable is a count, i.e., a sum of binary items (traveled or did 
 [^4]: Overdispersion occurs when the observed variance is larger than the expected variance from a given model [@Collett2003].
 
 \begin{table}[!htbp] \centering 
-  \caption{Negative Binomial Regression - Gift Travel (110th-114th Congresses)} 
+  \caption{Effects on Total Number of Gifted Trips - 110th-114th Congresses} 
   \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
-\\[-1.8ex] & \multicolumn{3}{c}{Count of Total Gifted Trips} \\ 
- & Full Model & Republicans & Democrats \\
-\\[-1.8ex] & (1) & (2) & (3)\\ 
+\\[-1.8ex] & Count of Total Gifted Trips \\ 
 \hline \\[-1.8ex] 
- Democrat & $-$0.194$^{***}$ &  &  \\ 
-  & (0.038) &  &  \\ 
-  & & & \\ 
- Majority Status &  & 0.272$^{**}$ & $-$0.243$^{**}$ \\ 
-  &  & (0.097) & (0.091) \\ 
-  & & & \\ 
- Ideological Extremity & 0.865$^{***}$ & 0.564$^{***}$ & 1.864$^{***}$ \\ 
-  & (0.120) & (0.134) & (0.270) \\ 
-  & & & \\ 
- Win Percentage & 0.007$^{***}$ & 0.002 & 0.007$^{**}$ \\ 
-  & (0.001) & (0.002) & (0.002) \\ 
-  & & & \\ 
- Seniority & 0.013$^{**}$ & 0.008 & 0.010 \\ 
-  & (0.004) & (0.006) & (0.007) \\ 
-  & & & \\ 
- Chair & 0.748$^{***}$ & 0.661$^{***}$ & 0.864$^{***}$ \\ 
-  & (0.083) & (0.089) & (0.154) \\ 
-  & & & \\ 
- Committee (Ranking Member) & 0.350$^{***}$ & 0.677$^{***}$ & 0.161 \\ 
-  & (0.087) & (0.118) & (0.129) \\ 
-  & & & \\ 
- Party Leader & 0.735$^{***}$ & 0.766$^{***}$ & 0.764$^{***}$ \\ 
-  & (0.131) & (0.151) & (0.211) \\ 
-  & & & \\ 
- 114th Congress & 0.883$^{***}$ & 0.921$^{***}$ & 0.411$^{***}$ \\ 
-  & (0.061) & (0.119) & (0.120) \\ 
-  & & & \\ 
- 113th Congress & 0.742$^{***}$ & 0.697$^{***}$ & 0.468$^{***}$ \\ 
-  & (0.060) & (0.116) & (0.119) \\ 
-  & & & \\ 
- 112th Congress & 0.571$^{***}$ & 0.395$^{***}$ & 0.488$^{***}$ \\ 
-  & (0.061) & (0.115) & (0.119) \\ 
-  & & & \\ 
- 111th Congress & 0.387$^{***}$ & 0.564$^{***}$ & 0.286$^{**}$ \\ 
-  & (0.062) & (0.082) & (0.090) \\ 
-  & & & \\ 
- Constant & $-$0.458$^{**}$ & 0.042 & $-$1.386$^{***}$ \\ 
-  & (0.145) & (0.183) & (0.271) \\ 
-  & & & \\ 
+ Ideological Extremity & 0.348$^{*}$ \\ 
+  & (0.142) \\ 
+  & \\ 
+ Democrat & $-$1.886$^{***}$ \\ 
+  & (0.276) \\ 
+  & \\ 
+ Win Percentage & 0.005$^{**}$ \\ 
+  & (0.001) \\ 
+  & \\ 
+ Ranking Member & 0.627$^{***}$ \\ 
+  & (0.132) \\ 
+  & \\ 
+ Seniority & 0.008 \\ 
+  & (0.005) \\ 
+  & \\ 
+ Committee Chair & 0.761$^{***}$ \\ 
+  & (0.082) \\ 
+  & \\ 
+ Party Leader & 0.755$^{***}$ \\ 
+  & (0.129) \\ 
+  & \\ 
+ 114th Congress & 0.850$^{***}$ \\ 
+  & (0.062) \\ 
+  & \\ 
+ 113th Congress & 0.776$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ 112th Congress & 0.602$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ 111th Congress & 0.407$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ Ideological Extremity x Democrat & 1.698$^{***}$ \\ 
+  & (0.270) \\ 
+  & \\ 
+ Ranking Member x Democrat & $-$0.490$^{**}$ \\ 
+  & (0.171) \\ 
+  & \\ 
+ Constant & 0.224 \\ 
+  & (0.179) \\ 
+  & \\ 
 \hline \\[-1.8ex] 
-Observations & 2,180 & 1,102 & 1,078 \\ 
-Log Likelihood & $-$5,503.002 & $-$2,786.823 & $-$2,638.505 \\ 
-$\theta$ & 2.041$^{***}$  (0.097) & 3.320$^{***}$  (0.256) & 1.571$^{***}$  (0.103) \\ 
+Observations & 2,180 \\ 
+Log Likelihood & $-$5,478.676 \\ 
+$\theta$ & 2.129$^{***}$  (0.104) \\ 
 \hline 
-\hline \\[-1.8ex] 
-\textit{Note: Standard errors reported in parentheses.}  & \multicolumn{3}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\
+\hline \\[-1.8ex]
+\textit{Note: Standard errors reported in parentheses.}  & \multicolumn{1}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\
 \end{tabular} 
 \end{table}
 
-Do members of Congress differ in how many gift trips they go on? What characteristics separate those who travel often from those who stay in Washington? The results from our statistical analysis offer answers to these questions. As our theory led us to expect, members in positions of power---party leaders, committee chairs and ranking members---on average go on significantly more gift trips than the rank and file. The statistically significant parameter estimates for the power variables indicate that this is the case, but they do not give us a clear idea of how many more trips per Congress such powerful members are estimated to go on. For the substantive meaning of the estimates, we calculate the contribution each explanatory variable makes to the predicted number of trips, and we plot the changes in Figure X. For instance, holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113%. 
 
-Members in the highest positions of their committees also travel at a higher rate. For members of both parties, the effect of being a committee chair is almost identical in size to being a party leader, while the effect of ranking member differs across party. Republican ranking members do see a significantly larger amount of travel, going on an estimated 2.25 more trips (87% increase). The same is not true for Democratic ranking members in our data. Though larger, the number of trips they go on is not statistically different from the number of trips non-ranking members take. Why this should be so is unclear, but as we will soon see, some Democratic members make up for it with the appeal of their higher liberalism.
-
-The interactive effect of ideological extremity and party on the number of gift-travel trips members go on is the second major finding of this paper. It is important not only because the magnitude of its effect is large but also because it reveals how ideology works to attract sponsors toward members in different degrees depending on their party. The first thing to note is that ideologically extreme members are more likely than their moderate colleagues to venture out at the invitation of sponsoring organizations. The large positive effect of ideological extremity holds for members of both parties. But the size of the effect is larger for Democrats than it is for Republicans. The estimated number of trips for Republicans rises from 2.1 to 3.3 (57% increase), while the number for Democrats jumps from 1.8 to 4.8 (167% increase). So, what a Democrat may lack in committee power in the eyes of sponsors, she may make up for in ideological constancy.
-
-We also find some interesting null effects. Though we expected otherwise, more senior and electorally safe members are no more likely than their marginal freshman counterparts to take a trip on someone else's dime. The fixed effects for Congressional term provide us with further information, namely that gift travel appears to be steadily increasing in frequency since records began in 2007. Lastly, it is important to note that, all things considered, Republicans of the rank and file go on average 2.6 total per Congress, which is 0.4 trips (18%) more than similar Democrats. Republicans in general have been going on more gift travel than Democrats.  
-
-<!---
-Our full model includes members from both parties $(n=2180)$, which we account for by including a variable that indicates whether a member is a Democrat or not. From the negative coefficient on our party variable we can confirm what we saw from our descriptive statistics---Democrats travel less frequently than Republicans. The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. More ideologically extreme members travel more, contrary to our theoretical expectations. Ideological extremity has the largest effect among our explanatory variables. Before speculating too much on our ideology finding, we will see if extremity has the same effects among Democrats and Republicans. Gift travel may be an avenue for ideological groups to reward loyal members and provide them with information subsidies.
 
 The last set of variables relate to our power hypothesis. Being a party leader or a committee chair both provide large effects. Leadership positions lead to more trips and this suggests these powerful positions are important drivers of more gifted trips. Being a committee's ranking member also has a positive effect on gift travel, but the effect is about half that of being the chair of the committee.
 
