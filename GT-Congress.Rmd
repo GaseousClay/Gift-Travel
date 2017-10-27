@@ -83,6 +83,7 @@ Not all members go on gift travel, but most of them do. Of the 2180 total member
 
 ```{r, echo = F}
 library(ggplot2)
+library(MASS)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
 ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="black", fill="purple", alpha=0.4) + theme_classic() + labs(x="Numer of Trips", y="Number of Members")
 ```
@@ -104,8 +105,7 @@ Party and ideology (roll-call summary) data were downloaded from the voteview.or
 
 # Models and Results
 
-
-# Results
+## Results
 
 Do members of Congress differ in how many gift trips they go on? What characteristics separate those who travel often from those who stay in Washington or travel only home to their districts? The results from our statistical analysis offers answers to these questions. As our theory led us to expect, members in positions of power---party leaders, committee chairs and ranking members---on average go on significantly more gift trips than the rank and file. The statistically significant parameter estimates for the power variables indicate that powerful members travel more, but they do not give us a clear idea of how many more trips per Congress they go on. For the substantive meaning of the estimates, we calculate the contribution each explanatory variable makes to the predicted number of trips, and we plot the changes in Figure X. For instance, holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their sample means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113%.
 
@@ -118,6 +118,7 @@ We also find some interesting null effects. Though we expected otherwise, more s
 --- R Results
 <!---
 Our full model includes members from both parties $(n=2180)$, which we account for by including a variable that indicates whether a member is a Democrat or not. From the negative coefficient on our party variable we can confirm what we saw from our descriptive statistics---Democrats travel less frequently than Republicans. The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. More ideologically extreme members travel more, contrary to our theoretical expectations. Ideological extremity has the largest effect among our explanatory variables. Before speculating too much on our ideology finding, we will see if extremity has the same effects among Democrats and Republicans. Gift travel may be an avenue for ideological groups to reward loyal members and provide them with information subsidies.
+--->
 
 
 \begin{table}[]
@@ -142,6 +143,7 @@ Ranking Member (Democrat=1) & 2.17              & 2.49              \\
 
 ```{r, echo = F}
 library(ggplot2)
+library(dplyr)
 library(RColorBrewer)
 #set up data and multiplot function
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
@@ -184,7 +186,8 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
 
 #predicted values
 extremitydata <- data.frame(extreme = giftdata$extreme, democrat = 0, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
-extremitydataD1 <- data.frame(extreme = giftdata$extreme, democrat = 1, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+extremitydataD1 <- data.frame(extreme = giftdata$extreme, democrat = giftdata$democrat, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
+extremitydataD1 <- filter(extremitydataD1, democrat == 1)
 winpctdata <- data.frame(extreme = mean(giftdata$extreme), democrat = 0, winpct = giftdata$winpct, seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
 senioritydata <- data.frame(extreme = mean(giftdata$extreme), democrat = 0, winpct = mean(giftdata$winpct), seniority = giftdata$seniority, chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
 extremitydata$phat <- predict(finalmodel, extremitydata, type = "response")
@@ -244,8 +247,6 @@ multiplot(p1, p3, p2, p4, cols=2)
 ```
 
 Our full model includes members from both parties $(n=2180)$, which we account for by including a variable that indicates whether a member is a Democrat or not. From the negative coefficient on our party variable we can confirm what we saw from our descriptive statistics--Democrats travel less frequently than Republicans. The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. More ideologically extreme members travel more, contrary to our theoretical expectations. Ideological extremity has the largest effect among our explanatory variables. Before speculating too much on our ideology finding, we will see if extremity has the same effects among Democrats and Republicans. Gift travel may be an avenue for ideological groups to reward loyal members and provide them with information subsidies.
->>>>>>> master
---->
 
 # Discussion
 
