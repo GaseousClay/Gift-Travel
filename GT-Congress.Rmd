@@ -3,8 +3,8 @@ title: 'Gift Travel in the U.S. House of Representatives'
 author: "Philip R. Moniz & Zachary A. McGee"
 date: \today
 output:
-  pdf_document: default
   word_document: default
+  pdf_document: default
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 tables: true
 linestretch: 2
@@ -109,9 +109,70 @@ Party and ideology (roll-call summary) data were downloaded from the voteview.or
 
 ## Results
 
-Do members of Congress differ in how many gift trips they go on? What characteristics separate those who travel often from those who stay in Washington or travel only home to their districts? The results from our statistical analysis offers answers to these questions. As our theory led us to expect, members in positions of power---party leaders, committee chairs and ranking members---on average go on significantly more gift trips than the rank and file. The statistically significant parameter estimates for the power variables indicate that powerful members travel more, but they do not give us a clear idea of how many more trips per Congress they go on. For the substantive meaning of the estimates, we calculate the contribution each explanatory variable makes to the predicted number of trips, and we plot the changes in Figure X. For instance, holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their sample means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113%.
+Do members of Congress differ in how many gift trips they go on? What characteristics separate those who travel often from those who stay in Washington or travel only home to their districts? The results from our statistical analysis offers answers to these questions. As our theory led us to expect, members in positions of power---party leaders, committee chairs and ranking members---on average go on significantly more gift trips than the rank and file. The statistically significant parameter estimates for the power variables indicate that powerful members travel more, but they do not give us a clear idea of how many more trips per Congress they go on. For the substantive meaning of the estimates, we calculate the contribution each explanatory variable makes to the predicted number of trips, and we plot the changes in Figure 3. For instance, holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their sample means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113%.
 
 Members in the highest positions of their committees also travel at a higher rate. For members of both parties, the effect of being a committee chair is almost identical in size to being a party leader, while the effect of ranking member differs across party. Republican ranking members do see a significantly larger amount of travel, going on an estimated 2.25 more trips (87% increase). The same is not true for Democratic ranking members in our data. Though larger, the number of trips they go on is not statistically different from the number of trips non-ranking members take. Why this should be so is unclear.
+
+\begin{table}[!htbp] \centering 
+  \caption{Effects on Total Number of Gifted Trips - 110th-114th Congresses} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\\[-1.8ex] & Count of Total Gifted Trips \\ 
+\hline \\[-1.8ex] 
+ Ideological Extremity & 0.348$^{*}$ \\ 
+  & (0.142) \\ 
+  & \\ 
+ Democrat & $-$1.886$^{***}$ \\ 
+  & (0.276) \\ 
+  & \\ 
+ Win Percentage & 0.005$^{**}$ \\ 
+  & (0.001) \\ 
+  & \\ 
+ Ranking Member & 0.627$^{***}$ \\ 
+  & (0.132) \\ 
+  & \\ 
+ Seniority & 0.008 \\ 
+  & (0.005) \\ 
+  & \\ 
+ Committee Chair & 0.761$^{***}$ \\ 
+  & (0.082) \\ 
+  & \\ 
+ Party Leader & 0.755$^{***}$ \\ 
+  & (0.129) \\ 
+  & \\ 
+ 114th Congress & 0.850$^{***}$ \\ 
+  & (0.062) \\ 
+  & \\ 
+ 113th Congress & 0.776$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ 112th Congress & 0.602$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ 111th Congress & 0.407$^{***}$ \\ 
+  & (0.061) \\ 
+  & \\ 
+ Ideological Extremity x Democrat & 1.698$^{***}$ \\ 
+  & (0.270) \\ 
+  & \\ 
+ Ranking Member x Democrat & $-$0.490$^{**}$ \\ 
+  & (0.171) \\ 
+  & \\ 
+ Constant & 0.224 \\ 
+  & (0.179) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 2,180 \\ 
+Log Likelihood & $-$5,478.676 \\ 
+$\theta$ & 2.129$^{***}$  (0.104) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
+ & \multicolumn{1}{r}{Standard errors reported in parentheses.} \\ 
+\end{tabular} 
+\end{table} 
 
 The interactive effect of ideological extremity and party on the number of gift-travel trips members go on is the second major finding of this paper. It is important not only because the magnitude of its effect is large but also because it reveals how ideology works to attract sponsors toward members in different degrees depending on their party. The first thing to note is that ideologically extreme members are more likely than their moderate colleagues to venture out at the invitation of sponsoring organizations. The large positive effect of ideological extremity holds for members of both parties. But the size of the effect is larger for Democrats than it is for Republicans. The estimated number of trips for Republicans rises from 2.1 to 3.3 (57% increase), while the number for Democrats jumps from 0.9 to 4.8 (433% increase). So, what a Democrat may lack in committee power in the eyes of sponsors, she may make up for in ideological constancy.
 
@@ -139,7 +200,7 @@ Ranking Member (Republican) & 2.58              & 4.83              \\
                             & {[}2.33 - 2.85{]} & {[}3.75 - 6.22{]} \\
 Ranking Member (Democratic) & 2.17              & 2.49              \\
                             & {[}1.97 - 2.39{]} & {[}1.98 - 3.15{]} \\ \bottomrule
-\multicolumn{2}{l}{\footnotesize Note: Standard errors in parentheses}    \\
+\multicolumn{2}{l}{\footnotesize Note: Standard errors reported in parentheses}    \\
 \end{tabular}
 \end{table}
 
