@@ -6,6 +6,7 @@ output:
   pdf_document: default
   word_document: default
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
+tables: true
 ---
 \abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study of the trips that members go on at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. Since 2007, Congressional rules have required members to report all gifted travel, and we analyze all reports from 2007 to 2017. We have to big findings: interest groups target powerful members, committee chairs and ranking members, over the rank and file; and more ideologically extreme members are no less likely than their moderate counterparts to go on gifted trips. The data allow us to characterize the universe of trip sponsors as dominated by a few recurring actors but populated with many sponsors total. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
 
@@ -81,20 +82,20 @@ We have one primary dependent variable: *trips*. It is a count, i.e., a sum of b
 
 Not all members go on gift travel, but most of them do. Of the 2180 total members, 292 (13.4%) did not go on a single trip. Similarly, 253 members (11.6%) went on exactly one, 42 (11.4%) went on two, 255 (11.7%) went on three, with 4.8 trips being the mean. Figure 1 shows a histogram of the number of trips taken by all the members. The figure is heavily right-skewed (mean = 4.8, sd = 4.7, median = 4), with only 30 members going on 20 or more trips. The member to go on the most trips, 50, was Fred Upton (MI-R), both a committee chairman and a senior member. Louise Slaughter (NY-D), another senior member in a high-ranking committee position, though in the minority party, went on zero trips during the 114th Congress.
 
-```{r, echo = F}
+```{r, echo = F, message = F, fig.cap = "Histogram of Trips (2007-2017)"}
 library(ggplot2)
 library(MASS)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="black", fill="purple", alpha=0.4) + theme_classic() + labs(x="Numer of Trips", y="Number of Members")
+ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="black", fill="purple", alpha=0.4) + theme_classic() + labs(x="Number of Trips", y="Number of Members")
 ```
 
 Democrats travel less often, on average, compared to Republicans (see Figure 2). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7$). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3$).
 
-```{r, echo = F}
+```{r, echo = F, message = F, fig.cap = "Histogram of Trips (2007-2017) by Party"}
 library(ggplot2)
 library(RColorBrewer)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="dodge") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("blue", "red"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Number of Trips", y="Number of Members")
+ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="stack") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("blue", "red"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Number of Trips", y="Number of Members")
 ```
 
 ### Explanatory variables
@@ -138,10 +139,11 @@ Ranking Member (Democrat=0) & 2.58              & 4.83              \\
                             & {[}2.33 - 2.85{]} & {[}3.75 - 6.22{]} \\
 Ranking Member (Democrat=1) & 2.17              & 2.49              \\
                             & {[}1.97 - 2.39{]} & {[}1.98 - 3.15{]} \\ \bottomrule
+\multicolumn{2}{l}{\footnotesize Note: Standard errors in parentheses}    \\
 \end{tabular}
 \end{table}
 
-```{r, echo = F}
+```{r, echo = F, warning = F, message = F, fig.cap = "Predicted Trips Taken per Congress"}
 library(ggplot2)
 library(dplyr)
 library(RColorBrewer)
@@ -229,11 +231,11 @@ mypalette <- brewer.pal(3,"Purples")
 p1 <- ggplot(extremitydataCI, aes(extreme, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = democrat), alpha = .25) +
   geom_line(aes(colour = committee), size = 1) +
-  labs(x = "Ideological Extremity", y = "Predicted Trips (Democrat = 0)") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+  labs(x = "Ideological Extremity", y = "Predicted Trips-Republicans") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
 p2 <- ggplot(extremitydataD1CI, aes(extreme, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = chairman), alpha = .25) +
   geom_line(aes(colour = party.leader), size = 1) +
-  labs(x = "Ideological Extremity", y = "Predicted Trips (Democrat = 1)") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+  labs(x = "Ideological Extremity", y = "Predicted Trips-Democrats") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
 p3 <- ggplot(winpctdataCI, aes(winpct, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = committee), alpha = .25) +
   geom_line(aes(colour = committee), size = 1) +
@@ -245,8 +247,6 @@ p4 <- ggplot(senioritydataCI, aes(seniority, Trips)) +
 
 multiplot(p1, p3, p2, p4, cols=2)
 ```
-
-Our full model includes members from both parties $(n=2180)$, which we account for by including a variable that indicates whether a member is a Democrat or not. From the negative coefficient on our party variable we can confirm what we saw from our descriptive statistics--Democrats travel less frequently than Republicans. The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. More ideologically extreme members travel more, contrary to our theoretical expectations. Ideological extremity has the largest effect among our explanatory variables. Before speculating too much on our ideology finding, we will see if extremity has the same effects among Democrats and Republicans. Gift travel may be an avenue for ideological groups to reward loyal members and provide them with information subsidies.
 
 # Discussion
 
