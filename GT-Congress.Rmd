@@ -3,8 +3,8 @@ title: 'Gift Travel in the U.S. House of Representatives'
 author: "Philip R. Moniz & Zachary A. McGee"
 date: \today
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 tables: true
 linestretch: 2
@@ -109,7 +109,7 @@ Party and ideology (roll-call summary) data were downloaded from the voteview.or
 
 ## Results
 
-Do members of Congress differ in how many gift trips they go on? What characteristics separate those who travel often from those who stay in Washington or travel only home to their districts? The results from our statistical analysis offers answers to these questions. As our theory led us to expect, members in positions of power---party leaders, committee chairs and ranking members---on average go on significantly more gift trips than the rank and file. The statistically significant parameter estimates for the power variables indicate that powerful members travel more, but they do not give us a clear idea of how many more trips per Congress they go on. For the substantive meaning of the estimates, we calculate the contribution each explanatory variable makes to the predicted number of trips, and we plot the changes in Figure 3. For instance, holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their sample means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113%.
+Do members of Congress differ in how many gift trips they go on? What characteristics separate those who travel often from those who stay in Washington or travel only home to their districts? The results reported in Table 1 offer answers to these questions. As our theory led us to expect, members in positions of power---party leaders, committee chairs and ranking members---on average go on significantly more gift trips than the rank and file. The statistically significant parameter estimates for the power variables indicate that powerful members travel more, but they do not give us a clear idea of how many more trips per Congress they go on. For the substantive meaning of the estimates, we calculate the contribution each explanatory variable makes to the predicted number of trips, and we plot the changes in Figure 3. For instance, holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their sample means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113%.
 
 Members in the highest positions of their committees also travel at a higher rate. For members of both parties, the effect of being a committee chair is almost identical in size to being a party leader, while the effect of ranking member differs across party. Republican ranking members do see a significantly larger amount of travel, going on an estimated 2.25 more trips (87% increase). The same is not true for Democratic ranking members in our data. Though larger, the number of trips they go on is not statistically different from the number of trips non-ranking members take. Why this should be so is unclear.
 
