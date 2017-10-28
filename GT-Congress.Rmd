@@ -7,8 +7,9 @@ output:
   word_document: default
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 tables: true
+linestretch: 2
 ---
-\abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study of the trips that members go on at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. Since 2007, Congressional rules have required members to report all gifted travel, and we analyze all reports from 2007 to 2017. We have to big findings: interest groups target powerful members, committee chairs and ranking members, over the rank and file; and more ideologically extreme members are no less likely than their moderate counterparts to go on gifted trips. The data allow us to characterize the universe of trip sponsors as dominated by a few recurring actors but populated with many sponsors total. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
+\abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study of the trips that members go on at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. Since 2007, Congressional rules have required members to report gifted travel, and we analyze all reports from 2007 to 2017. We have two key findings: interest groups target powerful members, committee chairs and ranking members, over the rank and file; and more ideologically extreme members are no less likely than their moderate counterparts to go on gifted trips; in fact, they are more likely to travel. The data allow us to characterize the universe of trip sponsors as dominated by a few recurring actors but populated with many total sponsors. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
 
 \newpage
 
@@ -116,7 +117,6 @@ The interactive effect of ideological extremity and party on the number of gift-
 
 We also find some interesting null effects. Though we expected otherwise, more senior and electorally safe members are no more likely than their marginal freshman counterparts to take a trip on someone else's dime. The fixed effects for Congressional term provide us with further information, namely that gift travel appears to be steadily increasing in frequency since records began in 2007. Gift travel is an increasingly popular activity. Lastly, it is important to note that, all things considered, Republicans of the rank and file go on average 2.6 total trips per Congress, which is 0.4 trips (18%) more than similar Democrats. Republicans in general have been going on more gift travel than Democrats.  
 
---- R Results
 <!---
 Our full model includes members from both parties $(n=2180)$, which we account for by including a variable that indicates whether a member is a Democrat or not. From the negative coefficient on our party variable we can confirm what we saw from our descriptive statistics---Democrats travel less frequently than Republicans. The remaining independent variables have positive and significant coefficients. Safer members tend to travel more, but only slightly. More ideologically extreme members travel more, contrary to our theoretical expectations. Ideological extremity has the largest effect among our explanatory variables. Before speculating too much on our ideology finding, we will see if extremity has the same effects among Democrats and Republicans. Gift travel may be an avenue for ideological groups to reward loyal members and provide them with information subsidies.
 --->
@@ -135,15 +135,15 @@ Democrat                    & 2.58              & 2.17              \\
                             & {[}2.33 - 2.85{]} & {[}1.97 - 2.39{]} \\
 Party Leader                & 2.58              & 5.49              \\
                             & {[}2.33 - 2.85{]} & {[}4.20 - 7.17{]} \\
-Ranking Member (Democrat=0) & 2.58              & 4.83              \\
+Ranking Member (Republican) & 2.58              & 4.83              \\
                             & {[}2.33 - 2.85{]} & {[}3.75 - 6.22{]} \\
-Ranking Member (Democrat=1) & 2.17              & 2.49              \\
+Ranking Member (Democratic) & 2.17              & 2.49              \\
                             & {[}1.97 - 2.39{]} & {[}1.98 - 3.15{]} \\ \bottomrule
 \multicolumn{2}{l}{\footnotesize Note: Standard errors in parentheses}    \\
 \end{tabular}
 \end{table}
 
-```{r, echo = F, warning = F, message = F, fig.cap = "Predicted Trips Taken per Congress"}
+```{r, echo = F, warning = F, message = F, fig.height = 5, fig.cap = "Predicted Trips Taken per Congress"}
 library(ggplot2)
 library(dplyr)
 library(RColorBrewer)
@@ -231,11 +231,11 @@ mypalette <- brewer.pal(3,"Purples")
 p1 <- ggplot(extremitydataCI, aes(extreme, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = democrat), alpha = .25) +
   geom_line(aes(colour = committee), size = 1) +
-  labs(x = "Ideological Extremity", y = "Predicted Trips-Republicans") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+  labs(x = "Ideological Extremity", y = "Predicted Trips: Republicans") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
 p2 <- ggplot(extremitydataD1CI, aes(extreme, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = chairman), alpha = .25) +
   geom_line(aes(colour = party.leader), size = 1) +
-  labs(x = "Ideological Extremity", y = "Predicted Trips-Democrats") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
+  labs(x = "Ideological Extremity", y = "Predicted Trips: Democrats") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic()
 p3 <- ggplot(winpctdataCI, aes(winpct, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = committee), alpha = .25) +
   geom_line(aes(colour = committee), size = 1) +
