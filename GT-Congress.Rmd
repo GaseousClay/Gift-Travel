@@ -8,8 +8,9 @@ output:
 bibliography: /Users/philipmoniz/Documents/Scholastic Scribblings/my_library.bib
 tables: true
 linestretch: 2
+fontsize: 12pt
 ---
-\abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study of the trips that members go on at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. Since 2007, congressional rules have required members to report gifted travel, and we analyze all reports from 2007 to 2017. Members reported spending 42,388 days engaged in gift travel, with each member traveling an average 19 days per biennium. We have two key findings, first interest groups target powerful members, committee chairs and ranking members, over the rank and file; second more ideologically extreme members are more likely to go on gifted trips. The data allow us to characterize the universe of trip sponsors as dominated by a few recurring actors but populated with many total sponsors. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
+\abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study of the trips that members go on at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. Since 2007, congressional rules have required members to report gifted travel, and we analyze all reports from 2007 to 2017. Members reported spending 42,388 days engaged in gift travel, with each member traveling an average 19 days per biennium. We find that interest groups target powerful members over the rank and file; and that more ideologically extreme members are more likely to go on gifted trips. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
 
 \newpage
 
@@ -33,7 +34,7 @@ We theorize that sponsoring organizations seek short-term policy influence, info
 
 Members of Congress and interest groups have a dynamic relationship. Because they are engaged in a mutually beneficial give-and-take, the American public is regularly suspicious about the potential for corruption between these groups and their representatives. Suspicious of these relationships too, political scientists have investigated how interest groups, corporations, and think tanks---and their respective PACs---attempt to influence policymakers. Scholars have not found much direct evidence of exogenous actors directly "buying" members votes [@Welch1982; @Wright1990]. Contributions that are timed correctly, such as before critical votes, have given scholars pause [@Stratmann1998]. And, certain groups seem to invest in members long-term [@Snyder1992].
 
-A more nuanced type of influence is more likely. Hall and Wayman [-@Hall1990] argue that contributions lead to less measurable changes, like shifts in the content of bills. It is also possible that interest groups provide critical information or services that make the lives of already overwhelmed legislators easier [@Hall2006]. Langbein [-@Langbein1986] argues that money buys access to members of Congress and, using predicted probabilities, finds that a PAC would need to contribute approximately \$72,000 for one hour with a member. Langbein also finds that the mean contribution in the 1975-1976 election cycle was \\$28,360, which yielded about 35 minutes of private meeting time with a member. There are two critical takeaways from these scholarly works. First, similar to Hall and Wayman and Hall and Deardorff, we expect a nuanced type of influence is likely at work with gift travel. And, second, gifted trips are much more taxing than a 35 minute meeting, which further buttresses the need for attention to these trips.
+A more nuanced type of influence is more likely. Hall and Wayman [-@Hall1990] argue that contributions lead to less measurable changes, like shifts in the content of bills. It is also possible that interest groups provide critical information or services that make the lives of already overwhelmed legislators easier [@Hall2006]. Langbein [-@Langbein1986] argues that money buys access to members of Congress and, using predicted probabilities, finds that a PAC would need to contribute approximately \$72,000 for one hour with a member. Langbein also finds that the mean contribution in the 1975-1976 election cycle was \$28,360, which yielded about 35 minutes of private meeting time with a member. There are two critical takeaways from these scholarly works. First, similar to Hall and Wayman and Hall and Deardorff, we expect a nuanced type of influence is likely at work with gift travel. And, second, gifted trips are much more taxing than a 35 minute meeting, which further buttresses the need for attention to these trips.
 
 The study of when and where members of Congress travel is not new. For instance, scholars have investigated where, how often, for how long, and with whom, members travel abroad as part of Congressional Delegations, or CODELs in D.C. argot [see for example @Alduncin2014; @Alduncin2017]. Some CODELs are partisan, others are bipartisan, but they are usually conducted in groups, presumably for the purpose of learning something valuable to their jobs as legislators.[^3] Alduncin et al. [-@Alduncin2014] find that trips abroad are getting shorter and, in general, members are spending less time together. With members spending less time together, the authors argue that the social fabric within the institution is fraying. Alduncin, Parker, and Theriault [-@Alduncin2017, 1] find a still fraying social fabric and argue that bipartisan foreign travel has become "a victim of the partisan war waging in Congress." Their conclusion was drawn from the bleak realities of their findings, which were that (among other things) extremely conservative House Republicans have become much more likely to travel with only co-partisans. The effects are similar, but of a lesser magnitude for moderate Republicans.
 
@@ -89,16 +90,17 @@ Not all members go on gift travel, but most of them do. Of the 2180 total member
 library(ggplot2)
 library(MASS)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="black", fill="purple", alpha=0.4) + theme_classic() + labs(x="Number of Trips", y="Number of Members")
+ggplot(data = giftdata, aes(x=trips)) + geom_histogram(color="black", fill="black", alpha=0.4) + theme_classic() + labs(x="Number of Trips", y="Number of Members")
 ```
 
 Democrats travel less often, on average, compared to Republicans (see Figure 2). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7$). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3$).
 
-```{r, echo = F, message = F, fig.cap = "Histogram of Trips (2007-2017) by Party"}
+```{r, echo = F, message = F, fig.cap = "Histogram of Trips per Congress (2007-2017) by Party"}
 library(ggplot2)
 library(RColorBrewer)
 giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="stack") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("blue", "red"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Number of Trips", y="Number of Members")
+#ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="stack") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("blue", "red"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Number of Trips", y="Number of Members")
+ggplot(data = giftdata, aes(x = trips, fill = as.factor(party))) + geom_histogram(alpha=0.8, position="stack") + theme_classic() + scale_fill_manual(name =c("Legend"), values=c("black", "grey"), labels=c("100"="Democrats", "200"="Republicans")) + labs(x="Number of Trips", y="Number of Members")
 ```
 
 # Results
@@ -282,7 +284,7 @@ senioritydataCI <- within(senioritydataCI, {
   UL <- exp(fit + 1.96 * se.fit)})
 
 #plots
-mypalette <- brewer.pal(3,"Purples")
+mypalette <- brewer.pal(3,"Greys")
 p1 <- ggplot(extremitydataCI, aes(extreme, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = democrat), alpha = .25) +
   geom_line(aes(colour = committee), size = 1) +
