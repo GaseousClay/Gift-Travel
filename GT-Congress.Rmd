@@ -145,6 +145,7 @@ bb %>% ggplot(aes(factor(Foreign))) + geom_bar(aes(fill = factor(cong)), positio
 
 As suspected, members have a clear preference for taking foreign trips instead of sending their staffers in their place (see Figure 5 and Figure 6). And, their preference has grown stronger over time. Members in the 114th Congress attended about half of the foreign trips compared to about 25% of foreign trips in the 110th Congress. It is unclear why we have not also seen an increase in travel-focused attacks in campaigns. It is possible that attack ads focusing on foreign travel are more salient during financial crises (i.e., the 110th Congress). Let's turn now to our inferential analysis to try and get more concrete answers about the driving factors of gift travel.
 
+<!---
 ```{r, echo = F, message = F, fig.cap = "Proportion of Foreign Trips Taken by Members (2007-2017)"}
 bb <- import("110-4gt_foreign_staff.csv")
 bb <- bb[bb$FilingType == "Original",] # keep only "Original" filings 
@@ -168,6 +169,17 @@ bb %>% group_by(cong) %>%
             average_member = mean(MemberTrip)) %>%
   ggplot(aes(cong, average_foreign)) + geom_col(aes(fill = factor(cong))) + labs(x="Congress", y="Proportion of Foreign Trips Taken by Staffers") + scale_y_continuous(limits = c(0, .6)) + theme_classic() + guides(fill=FALSE)
 ```
+---->
+
+```{r, echo = F, message = F, fig.cap = "Percentage of Foreign Trips Taken by Staff and Members (2007-2017)"}
+bb <- import("110-4gt_foreign_staff.csv")
+bb <- bb[bb$FilingType == "Original",] # keep only "Original" filings 
+# proportion of trips by member over time	
+# count of trips abroad over time
+bb %>% ggplot(aes(x = cong, fill = factor(MemberTrip))) + geom_bar(position = "fill") + labs(y = "Percentage of Foreign Trips Taken",
+      x = "Congress") + scale_fill_discrete(name = "Traveler", labels = c("Staff", "Members"))
+```
+
 
 # Results
 
