@@ -2,14 +2,14 @@
 title: 'Gift Travel in the U.S. House of Representatives'
 author: "Philip R. Moniz & Zachary A. McGee"
 date: \today
-output:
-  pdf_document: default
-  word_document: default
 bibliography: /Users/philipmoniz/Data/allreferences.bib
 tables: true
 linestretch: 2
 fontsize: 12pt
+output:
+  pdf_document: default
 ---
+
 \abstract{XXX REVISE WITH NEW DESCRIPTIVES The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study highlighting the gifted trips that members take at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. We analyze all gift-travel reports provided to the Clerk of the House from 2007 to 2017. Members reported spending 42,388 days engaged in gift travel during that time, with each member traveling an average 19 days per biennium. We find that interest groups target powerful members over the rank and file; and that more ideologically extreme members are more likely to go on gifted trips. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
 
 \newpage
@@ -87,7 +87,7 @@ After attempting to correct for typos and various names for the same organizatio
 
 [^3]: Filing these reports is left up to the members and their staffs. It is up to them to spell the name of the sponsor correctly, use the full name or an abbreviation, and, indeed, know exactly who it is that is sponsoring the trip. Because of this, the true number of sponsors is likely slightly lower than 1,466.
 
-A small number of familiar names are responsible for a hefty portion of the number of trips taken each congress. Only about 4% (63 out of 1466) of the sponsoring organizations averaged at least one trip per Congress, or five total in the data set. This datum would imply that only five or six dozen organizations are assuming the cost of putting members on trips as a regular part of business. The other 95% or so appear to be using gift travel only sparingly, possibly in reaction to shifts in the policy agenda or opportunities to alter the policy content of bills [@Hall1990]. The sixty-two organizations that, on average, sponsored one or more trips per Congress account for 72% of the all the reported trips in our data set. The concentration of gifting behavior among a handful of sponsors is an important descriptive fact to note. See the Appendix for a table of the top travel sponsors. 
+A small number of familiar names are responsible for a hefty portion of the number of trips taken each congress. Only about 4% (63 out of 1466) of the sponsoring organizations averaged at least one trip per Congress, or five total in the data set. This datum would imply that only five or six dozen organizations are assuming the cost of putting members on trips as a regular part of business. The other 95% or so appear to be using gift travel only sparingly, possibly in reaction to shifts in the policy agenda or opportunities to alter the policy content of bills [@Hall1990]. The sixty-two organizations that, on average, sponsored one or more trips per Congress account for 72% of the all the reported trips in our data set. The concentration of gifting behavior among a handful of sponsors is an important descriptive fact to note. See Appendix Table 1 for a list of the top travel sponsors. 
 
 <!---
 To get some notion of who the big players are, let's look briefly at the top five sponsors. The most active sponsor, by far, is an organization called the Congressional Institute, which provided travel subsidies an average of 371 occasions per Congress. The Congressional Institute appears to invite great numbers of members, usually around 150 of them, to places near Washington, such as Hot Springs, Virginia. This group is the same that @Rosenson2009 indicated as the top sponsor. 
@@ -106,17 +106,15 @@ Our trips variable is aggregated at the office level. Members do not go on every
 <!---
 Staffers are clearly playing a key role in this information exchange and should be treated as equals in our analysis (see Figure A2). While it may seem unconventional to equate members and their staffers, consider that if interest groups were not seeing the same results when staffers attend, they would likely stop offering to pay for trips for these members. Or, groups might insist the member attend and refuse to pay for a staffer. But, since we can see a clear trend in the number of trips being attended overall increasing with each Congress, we do not find this explanation feasible.
 --->
-Not all members (or their staffers) go on gift travel, but most of them do. Of the 2,180 total members, 292 (13.4%) did not go on a single trip. Similarly, 253 members (11.6%) went on exactly one, 42 (11.4%) went on two, 255 (11.7%) went on three, with 4.8 trips being the mean. Figure A2 shows a histogram of the number of trips taken by all the members. The figure is heavily right-skewed (mean = 4.8, sd = 4.7, median = 4), with only 30 members total (or 6 per Congress) going on 20 or more trips.
+Not all members (or their staffers) go on gift travel, but most of them do. Of the 2,180 total members, 292 (13.4%) did not go on a single trip. Similarly, 253 members (11.6%) went on exactly one, 42 (11.4%) went on two, 255 (11.7%) went on three, with 4.8 trips being the mean. Figure A1 shows a histogram of the number of trips taken by all the members. The figure is heavily right-skewed (mean = 4.8, sd = 4.7, median = 4), with only 30 members total (or 6 per Congress) going on 20 or more trips.
 
-Democrats travel less often, on average, compared to Republicans (see Figure A3). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7$). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3$). 
+Democrats travel less often, on average, compared to Republicans (see Figure A2). The average number of trips among Democrats is 4.3, but the variance is large ($\sigma^2 = 23.7$). Republicans, on average, go on one more trip than Democrats; their average is 5.2, but again, the variance is large ($\sigma^2 = 20.3$). 
 
-Of course, not all trips are the same. Some trips involve foreign travel, while others entail just a quick jaunt into a state bordering the District of Columbia. Twenty-nine percent of all trips, on average, involved travel outside the United States.[^5] Figure A4 shows that, with the exception of the 114th Congress, foreign trips are growing in number, as are domestic trips. As suspected, members have a clear preference for taking foreign trips instead of sending their staffers in their place (see Figures A5 and A6). And, their preference has grown stronger over time. Members in the 113th and 114th Congresses attended about half of the foreign trips compared to one-third of foreign trips in the 110th Congress. Let's turn now to our inferential analysis to try and get more concrete answers about the driving factors of gift travel.
-
-[^5]: This proportion is consistent across time with the lowest proportion being 25% foreign travel in the 110th Congress. See Figure A1 in the appendix, which details this trend.
+Of course, not all trips are the same. Some trips involve foreign travel, while others entail just a quick jaunt into a state bordering the District of Columbia. Twenty-nine percent of all trips, on average, involved travel outside the United States. Figure A4 shows that, with the exception of the 114th Congress, foreign trips are growing in number, as are domestic trips. As suspected, members have a clear preference for taking foreign trips instead of sending their staffers in their place (see Figures A6 and A7). And, their preference has grown stronger over time. Members in the 113th and 114th Congresses attended about half of the foreign trips compared to one-third of foreign trips in the 110th Congress. Conversely, in the 110th, members went on 37% of all domestic trips; by the 114th, that number had shrunk to 14%. Over time, offices are going on more total trips, but the members are sending their staffers to many of the domestic destinations.  
 
 ### Results and Discussion
 
-What characteristics separate those who travel often from those who stay in Washington or only travel to their districts? The results reported in Table 1 offer answers to this question. The statistically significant parameter estimates for these position-of-power variables---party leaders, committee chairs, and ranking members---indicate that powerful members travel more, but the coefficients alone do not give us a clear idea of how many more trips per Congress they go on. For the substantive meaning of the regression estimates, we calculate predicted number of trips. Holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their sample means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113% (see Table 1). The effect of being a committee chair is almost identical in size to that of being a party leader, while the effect of ranking member differs across party.
+What characteristics separate those who travel often from those who stay in Washington or only travel to their districts? The predicted counts reported in Table 1 offer answers to this question. The statistically significant parameter estimates for these position-of-power variables---party leaders, committee chairs, and ranking members---indicate that powerful members travel more, but the coefficients alone do not give us a clear idea of how many more trips per Congress they go on. For the substantive meaning of the regression estimates, we calculate predicted number of trips. Holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their sample means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113% (see Table 1). The effect of being a committee chair is almost identical in size to that of being a party leader, while the effect of ranking member differs across party.
 
 \begin{table}[]
 \centering
@@ -148,7 +146,7 @@ Our full model includes members from both parties $(n=2180)$, which we account f
 --->
 
 
-```{r, echo = F, warning = F, message = F, fig.height = 3, fig.cap = "Predicted Trips Taken per Congress"}
+```{r, echo = F, warning = F, message = F, fig.height = 3.3, fig.cap = "Predicted Trips Taken per Congress"}
 library(dplyr)
 library(rio)
 library(ggplot2)
@@ -234,15 +232,15 @@ senioritydataCI <- within(senioritydataCI, {
   UL <- exp(fit + 1.96 * se.fit)})
 
 #plots
-mypalette <- brewer.pal(3,"Greys")
+mypalette <- brewer.pal(1,"Greys")
 p1 <- ggplot(extremitydataCI, aes(extreme, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = democrat), alpha = .25) +
   geom_line(aes(colour = committee), size = 1) +
-  labs(x = "Ideological Extremity", y = "Predicted Trips: GOP") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic() + ylim(0,6)
+  labs(x = "Ideological Extremity", y = "Pred. Trips: GOP") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic() + ylim(0,6)
 p2 <- ggplot(extremitydataD1CI, aes(extreme, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = chairman), alpha = .25) +
   geom_line(aes(colour = party.leader), size = 1) +
-  labs(x = "Ideological Extremity", y = "Predicted Trips: Dem.") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic() + ylim(0,6)
+  labs(x = "Ideological Extremity", y = "Pred. Trips: Dem.") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic() + ylim(0,6)
 p3 <- ggplot(winpctdataCI, aes(winpct, Trips)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = committee), alpha = .25) +
   geom_line(aes(colour = committee), size = 1) +
