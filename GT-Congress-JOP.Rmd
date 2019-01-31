@@ -1,16 +1,17 @@
 ---
-title: 'Gift Travel in the U.S. House of Representatives'
-author: "Philip R. Moniz & Zachary A. McGee"
-date: \today
-bibliography: /Users/philipmoniz/Data/allreferences.bib
-tables: true
+title: "Gift Travel in the U.S. House of Representatives"
+author: "Anonymous"
+date: "\today"
+output:
+  word_document: default
+  pdf_document: default
 linestretch: 2
 fontsize: 12pt
-output:
-  pdf_document: default
+tables: yes
+bibliography: /Users/philipmoniz/Data/allreferences.bib
 ---
-
-\abstract{XXX REVISE WITH NEW DESCRIPTIVES The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study highlighting the gifted trips that members take at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. We analyze all gift-travel reports provided to the Clerk of the House from 2007 to 2017. Members reported spending 42,388 days engaged in gift travel during that time, with each member traveling an average 19 days per biennium. We find that interest groups target powerful members over the rank and file; and that more ideologically extreme members are more likely to go on gifted trips. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
+\newpage
+\abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study highlighting the gifted trips that members take at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. We analyze all gift-travel reports provided to the Clerk of the House from 2007 to 2017. Members (and their staff) reported taking 10,364 trips during that time, with each member traveling an average of 4.75 times per biennium. We find that interest groups target powerful members over the rank and file; and that more ideologically extreme members are more likely to go on gifted trips. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
 
 \newpage
 
@@ -116,26 +117,8 @@ Of course, not all trips are the same. Some trips involve foreign travel, while 
 
 What characteristics separate those who travel often from those who stay in Washington or only travel to their districts? The predicted counts reported in Table 1 offer answers to this question. The statistically significant parameter estimates for these position-of-power variables---party leaders, committee chairs, and ranking members---indicate that powerful members travel more, but the coefficients alone do not give us a clear idea of how many more trips per Congress they go on. For the substantive meaning of the regression estimates, we calculate predicted number of trips. Holding all other power variables at zero and the continuous variables, *seniority*, *win percentage*, and *ideological extremity*, at their sample means, the effect of being party leader is sizable: a party leader is predicted to go on 5.49 trips per Congress, three more trips than a rank-and-file member, an increase of 113% (see Table 1). The effect of being a committee chair is almost identical in size to that of being a party leader, while the effect of ranking member differs across party.
 
-\begin{table}[]
-\centering
-\caption{Predicted Number of Trips}
-\label{}
-\begin{tabular}{@{}lll@{}}
-\toprule
-                            & No                 & Yes                 \\ \midrule
-Committee Chair             & 2.58              & 5.52              \\
-                            & {[}2.33 - 2.85{]} & {[}4.62 - 6.59{]} \\
-Democrat                    & 2.58              & 2.17              \\
-                            & {[}2.33 - 2.85{]} & {[}1.97 - 2.39{]} \\
-Party Leader                & 2.58              & 5.49              \\
-                            & {[}2.33 - 2.85{]} & {[}4.20 - 7.17{]} \\
-Ranking Member (Republican) & 2.58              & 4.83              \\
-                            & {[}2.33 - 2.85{]} & {[}3.75 - 6.22{]} \\
-Ranking Member (Democratic) & 2.17              & 2.49              \\
-                            & {[}1.97 - 2.39{]} & {[}1.98 - 3.15{]} \\ \bottomrule
-\multicolumn{2}{l}{\footnotesize Note: Standard errors reported in brackets.}    \\
-\end{tabular}
-\end{table}
+\begin{center} [Table 1 about here]
+\end{center}
 
 The interactive effect of ideological extremity and party on the number of gift-travel trips members go on is the second major finding of this paper. It is important not only because the magnitude of its effect is large but also because it reveals how ideology works to attract sponsors toward members in different degrees depending on their party. The large positive effect of ideological extremity holds for members of both parties, but the size of the effect is larger for Democrats than it is for Republicans. Visualized in Figure 1, the predicted number of trips for Republicans can be seen to rise from 2.1 to 3.3 (57% increase), while the number for Democrats jumps from 0.9 to 4.8 (433% increase). So, what a Democrat may lack in committee power in the eyes of sponsors, she may make up for if her views are sufficiently liberal.
 
@@ -146,119 +129,15 @@ Our full model includes members from both parties $(n=2180)$, which we account f
 --->
 
 
-```{r, echo = F, warning = F, message = F, fig.height = 3.3, fig.cap = "Predicted Trips Taken per Congress"}
-library(dplyr)
-library(rio)
-library(ggplot2)
-library(MASS)
-library(RColorBrewer)
-#set up data and multiplot function
-giftdata <- read.csv(file = "110-114Congresses.csv", header = TRUE, stringsAsFactors = FALSE)
-finalmodel <- glm.nb(trips ~ extreme*democrat + winpct + committee*democrat + seniority + chairman + party.leader + fourteenth + thirteenth + twelfth + eleventh, data = giftdata)
-multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
-  library(grid)
-
-  # Make a list from the ... arguments and plotlist
-  plots <- c(list(...), plotlist)
-
-  numPlots = length(plots)
-
-  # If layout is NULL, then use 'cols' to determine layout
-  if (is.null(layout)) {
-    # Make the panel
-    # ncol: Number of columns of plots
-    # nrow: Number of rows needed, calculated from # of cols
-    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
-                    ncol = cols, nrow = ceiling(numPlots/cols))
-  }
-
- if (numPlots==1) {
-    print(plots[[1]])
-
-  } else {
-    # Set up the page
-    grid.newpage()
-    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
-
-    # Make each plot, in the correct location
-    for (i in 1:numPlots) {
-      # Get the i,j matrix positions of the regions that contain this subplot
-      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
-
-      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
-                                      layout.pos.col = matchidx$col))
-    }
-  }
-}
-
-#predicted values
-extremitydata <- data.frame(extreme = giftdata$extreme, democrat = 0, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
-extremitydataD1 <- data.frame(extreme = giftdata$extreme, democrat = giftdata$democrat, winpct = mean(giftdata$winpct), seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
-extremitydataD1 <- filter(extremitydataD1, democrat == 1)
-winpctdata <- data.frame(extreme = mean(giftdata$extreme), democrat = 0, winpct = giftdata$winpct, seniority = mean(giftdata$seniority), chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
-senioritydata <- data.frame(extreme = mean(giftdata$extreme), democrat = 0, winpct = mean(giftdata$winpct), seniority = giftdata$seniority, chairman = 0, committee = 0, party.leader = 0, fourteenth = 0, thirteenth = 0, twelfth = 0, eleventh = 0)
-extremitydata$phat <- predict(finalmodel, extremitydata, type = "response")
-extremitydataD1$phat <- predict(finalmodel, extremitydataD1, type = "response")
-winpctdata$phat <- predict(finalmodel, winpctdata, type = "response")
-senioritydata$phat <- predict(finalmodel, senioritydata, type = "response")
-
-#prep for plots
-extremitydataCI <- data.frame(extremitydata)
-extremitydataCI <- cbind(extremitydataCI, predict(finalmodel, extremitydata, type = "link", se.fit = T))
-extremitydataCI <- within(extremitydataCI, {
-  Trips <- exp(fit)
-  LL <- exp(fit - 1.96 * se.fit)
-  UL <- exp(fit + 1.96 * se.fit)})
-
-extremitydataD1CI <- data.frame(extremitydataD1)
-extremitydataD1CI <- cbind(extremitydataD1CI, predict(finalmodel, extremitydataD1, type = "link", se.fit = T))
-extremitydataD1CI <- within(extremitydataD1CI, {
-  Trips <- exp(fit)
-  LL <- exp(fit - 1.96 * se.fit)
-  UL <- exp(fit + 1.96 * se.fit)})
-
-winpctdataCI <- data.frame(winpctdata)
-winpctdataCI <- cbind(winpctdataCI, predict(finalmodel, winpctdata, type = "link", se.fit = T))
-winpctdataCI <- within(winpctdataCI, {
-  Trips <- exp(fit)
-  LL <- exp(fit - 1.96 * se.fit)
-  UL <- exp(fit + 1.96 * se.fit)})
-
-senioritydataCI <- data.frame(senioritydata)
-senioritydataCI <- cbind(senioritydataCI, predict(finalmodel, senioritydata, type = "link", se.fit = T))
-senioritydataCI <- within(senioritydataCI, {
-  Trips <- exp(fit)
-  LL <- exp(fit - 1.96 * se.fit)
-  UL <- exp(fit + 1.96 * se.fit)})
-
-#plots
-mypalette <- brewer.pal(1,"Greys")
-p1 <- ggplot(extremitydataCI, aes(extreme, Trips)) +
-  geom_ribbon(aes(ymin = LL, ymax = UL, fill = democrat), alpha = .25) +
-  geom_line(aes(colour = committee), size = 1) +
-  labs(x = "Ideological Extremity", y = "Pred. Trips: GOP") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic() + ylim(0,6)
-p2 <- ggplot(extremitydataD1CI, aes(extreme, Trips)) +
-  geom_ribbon(aes(ymin = LL, ymax = UL, fill = chairman), alpha = .25) +
-  geom_line(aes(colour = party.leader), size = 1) +
-  labs(x = "Ideological Extremity", y = "Pred. Trips: Dem.") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic() + ylim(0,6)
-p3 <- ggplot(winpctdataCI, aes(winpct, Trips)) +
-  geom_ribbon(aes(ymin = LL, ymax = UL, fill = committee), alpha = .25) +
-  geom_line(aes(colour = committee), size = 1) +
-  labs(x = "Win Percentage", y = "Predicted Trips") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic() + ylim(0,6)
-p4 <- ggplot(senioritydataCI, aes(seniority, Trips)) +
-  geom_ribbon(aes(ymin = LL, ymax = UL, fill = fourteenth), alpha = .25) +
-  geom_line(aes(colour = fourteenth), size = 1) +
-  labs(x = "Terms Served in the House", y = "Predicted Trips") + guides(colour=FALSE, fill=FALSE) + scale_fill_distiller(palette = mypalette, type = "seq") + scale_color_distiller(palette = mypalette, type = "seq") + theme_classic() + ylim(0,6)
-
-multiplot(p1, p3, p2, p4, cols=2)
-```
+\begin{center} [Figure 1 about here]
+\end{center}
 
 In line with scholarship regarding the travel of members via Congressional Delegations [@Alduncin2014; @Alduncin2017], scholars could examine who travels with whom and how often. Future scholarship on member travel should also try to better specify the relationship between sponsors and members. A measure of sponsor ideological similarity would go a good ways in specifying the relationship, as would a coding of committee-related variables. Like sophisticated donors, sponsors may also target the committees most relevant to their policy goals, or ones ideologically similar to them [@Barber2017]. Our analysis speaks to who travels and how much, but future work should investigate whether those who travel more do so because they receive trips from a wide variety of sponsors or because they are given trips again and again by the same big organizations.
+
+\newpage
 
 # References
 \setlength{\parindent}{-.2in}
 \setlength{\leftskip}{.2in}
 \setlength{\parskip}{8pt}
 \noindent
-
-

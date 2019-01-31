@@ -1,0 +1,9 @@
+---
+title: "Gift Travel in the U.S. House of Representatives"
+author: "Philip R. Moniz & Zachary A. McGee"
+output: pdf_document
+---
+
+Philip R. Moniz is Graduate Student, University of Texas at Austin, Department of Government, 158 W 21st ST STOP A1800, Austin, TX 78712-1704; pmoniz@utexas.edu; 508-725-7527. Please send correspondence to this author.
+
+Zachary A. McGee is Graduate Student, University of Texas at Austin, Department of Government, 158 W 21st ST STOP A1800, Austin, TX 78712-1704; zmcgee@utexas.edu.
