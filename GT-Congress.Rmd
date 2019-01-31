@@ -10,7 +10,7 @@ output:
   pdf_document: default
 ---
 
-\abstract{XXX REVISE WITH NEW DESCRIPTIVES The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study highlighting the gifted trips that members take at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. We analyze all gift-travel reports provided to the Clerk of the House from 2007 to 2017. Members reported spending 42,388 days engaged in gift travel during that time, with each member traveling an average 19 days per biennium. We find that interest groups target powerful members over the rank and file; and that more ideologically extreme members are more likely to go on gifted trips. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
+\abstract{The relationship between interest groups and members of Congress plays out in many ways, some of which have received great scholarly attention while others have gone relatively unnoticed. We present a study highlighting the gifted trips that members take at the invitation and reimbursement of nongovernmental organizations. We introduce this "gift travel" as a tool that interest groups use to influence and exchange information with members. We analyze all gift-travel reports provided to the Clerk of the House from 2007 to 2017. Members (and their staff) reported taking 10,364 trips during that time, with each member traveling an average of 4.75 times per biennium. We find that interest groups target powerful members over the rank and file; and that more ideologically extreme members are more likely to go on gifted trips. Our analysis opens a new avenue for research on the interaction between members of Congress and interest groups.}
 
 \newpage
 
@@ -146,7 +146,7 @@ Our full model includes members from both parties $(n=2180)$, which we account f
 --->
 
 
-```{r, echo = F, warning = F, message = F, fig.height = 3.3, fig.cap = "Predicted Trips Taken per Congress"}
+```{r, echo = F, warning = F, message = F, fig.height = 3.3, fig.cap = "Predicted Trips Taken by Member per Congress"}
 library(dplyr)
 library(rio)
 library(ggplot2)
